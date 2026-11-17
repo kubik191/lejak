@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Schedules & alerts · VESNA Collector{% endblock %}
+{% block content %}
+<div class="mb-6">
+  <h1 class="text-2xl font-semibold tracking-tight">Schedules & alerts</h1>
+  <p class="text-sm text-slate-500">When each source is collected automatically (times in {{ settings.timezone }}). Changes are picked up by the worker within 15 seconds.</p>
+</div>
+
+{% if saved %}<div class="mb-4 rounded-lg border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-800">Schedule for <b>{{ SOURCES[saved].name if saved in SOURCES else saved }}</b> saved.</div>{% endif %}
+{% if error %}<div class="mb-4 rounded-lg border border-rose-200 bg-rose-50 p-3 text-sm text-rose-800">Invalid schedule — {{ error }}</div>{% endif %}
+
+<div class="space-y-4">
+  {% for source, setting, preview in rows %}
+  <form method="post" action="/schedules/{{ source.key }}" class="card grid gap-4 p-5 md:grid-cols-12 md:items-center">
+    <div class="md:col-span-4">
+      <h3 class="font-semibold">{{ source.name }}</h3>
+      <p class="text-xs text-slate-500">{{ source.description }}</p>
+    </div>
+    <div class="md:col-span-2">
+      <label class="inline-flex cursor-pointer items-center gap-2 text-sm">
+        <input type="checkbox" name="enabled" class="rounded" {{ 'checked' if setting.enabled }}> Automatic
+      </label>
+    </div>
+    <div class="md:col-span-4">
+      <div class="flex gap-2">
+        <select class="input w-40" onchange="if (this.value) this.form.schedule.value = this.value">
+          <option value="">Preset…</option>
+          {% for expr, label in presets %}<option value="{{ expr }}" {{ 'selected' if expr == setting.schedule }}>{{ label }}</option>{% endfor %}
+        </select>
+        <input name="schedule" value="{{ setting.schedule }}" class="input flex-1 font-mono" title="Cron: minute hour day month weekday">
+      </div>
+      <p class="mt-1 text-xs text-slate-500">
+        {% if setting.enabled and preview %}Next: {% for t in preview %}{{ t | dt }}{{ ', ' if not loop.last }}{% endfor %}{% else %}Paused — only manual runs.{% endif %}
+      </p>
+    </div>
+    <div class="flex justify-end gap-2 md:col-span-2">
+      <button class="btn btn-primary btn-sm">Save</button>
+      <button type="button" class="btn btn-secondary btn-sm" hx-post="/runs" hx-vals='{"source": "{{ source.key }}"}'>Run now</button>
+    </div>
+  </form>
+  {% endfor %}
+</div>
+
+<div class="mt-10 mb-4">
+  <h2 class="text-lg font-semibold tracking-tight">Email alerts</h2>
+  <p class="text-sm text-slate-500">An email is sent when a run fails, when at least {{ (settings.alert_failure_ratio * 100) | round | int }} % of stations fail, or when a station fails {{ settings.failing_after }} runs in a row.</p>
+</div>
+<div class="card p-5 text-sm">
+  {% if email == 'sent' %}<div class="mb-4 rounded-lg border border-emerald-200 bg-emerald-50 p-3 text-emerald-800">Test email sent to {{ settings.alert_recipients | join(', ') }}.</div>{% endif %}
+  {% if email.startswith('error') %}<div class="mb-4 rounded-lg border border-rose-200 bg-rose-50 p-3 text-rose-800">Sending failed: {{ email[6:] }}</div>{% endif %}
+  {% if settings.email_enabled %}
+    <dl class="grid grid-cols-2 gap-2 md:grid-cols-4">
+      <div><dt class="text-xs text-slate-500">Status</dt><dd class="text-emerald-700 font-medium">Enabled</dd></div>
+      <div><dt class="text-xs text-slate-500">SMTP server</dt><dd>{{ settings.smtp_host }}:{{ settings.smtp_port }}</dd></div>
+      <div><dt class="text-xs text-slate-500">From</dt><dd>{{ settings.alert_from }}</dd></div>
+      <div><dt class="text-xs text-slate-500">Recipients</dt><dd>{{ settings.alert_recipients | join(', ') }}</dd></div>
+    </dl>
+    <form hx-post="/notifications/test" class="mt-4"><button class="btn btn-secondary btn-sm">Send test email</button></form>
+  {% else %}
+    <p><span class="font-medium text-slate-700">Not configured.</span> Alerts are logged but not emailed. Set <code class="rounded bg-slate-100 px-1">SMTP_HOST</code>, <code class="rounded bg-slate-100 px-1">SMTP_USER</code>, <code class="rounded bg-slate-100 px-1">SMTP_PASSWORD</code> and <code class="rounded bg-slate-100 px-1">ALERT_TO</code> in <code class="rounded bg-slate-100 px-1">.env</code> and restart.</p>
+  {% endif %}
+</div>
+{% endblock %}

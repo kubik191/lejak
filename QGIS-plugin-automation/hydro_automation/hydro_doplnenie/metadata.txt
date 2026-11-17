@@ -1,0 +1,12 @@
+[general]
+name=Hydro Doplnenie
+qgisMinimumVersion=3.34
+description=Bulk import of Qn, gauge and wave points into Hydrologia_SK_doplnenie.
+version=0.3.0
+author=LEJAK
+email=change-me@example.com
+about=Scans model folders (Hydrological_data) for Qn, Gauge_Refrence_Level and Waves layers, maps their attributes into the Doplnenie layer, fills H_Q* from rating curves, previews everything and imports the selected points with a backup.
+tracker=https://example.invalid/hydro-doplnenie/issues
+repository=https://example.invalid/hydro-doplnenie
+category=Vector
+experimental=True

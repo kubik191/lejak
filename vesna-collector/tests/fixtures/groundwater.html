@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="sk-SK" class="no-js">
+<head>
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//www.google.com">
+    <link rel="dns-prefetch" href="//www.google.sk">
+    <link rel="dns-prefetch" href="//stats.g.doubleclick.net">
+    <link rel="dns-prefetch" href="//www.facebook.com">
+    <link rel="dns-prefetch" href="//static.xx.fbcdn.net">
+    <link rel="dns-prefetch" href="//connect.facebook.net">
+
+    <link rel="preload" as="font" href="/assets/fonts/icomoon.ttf?bfmrgw" crossorigin="anonymous">
+    <meta name="theme-color" content="#205493">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="shmu, shmú, pocasie, počasie, meteo, hydrometerologický ústav, meteorologický ústav, predpoveď počasia, výstrahy, hydrologické povodňová aktivita, zrážky, dážď, povodne, dunaj, rieky a toky slovenska, meteorológia, hydrológia" name="keywords">
+<meta content="Slovenský hydrometeorologický ústav, hydrologické a meteorologické predpovede a výstrahy, analýzy počasia, história počasia, emisie, kvalita ovzdušia" name="description">
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <meta content="Slovenský hydrometeorologický ústav" name="author">
+    <meta name="verify-v1" content="7kjxlmO1GexQ5A/Q+pq5zTRciBqyRdm5PrmkLD2UquE=">
+    
+    <meta name="author" content="Slovenský hydrometeorologický ústav">
+    <meta name="copyright" content="Slovenský hydrometeorologický ústav">
+    <meta property="fb:app_id" content="179204109293551">
+
+    <link type="text/css" rel="stylesheet" href="/assets/js/vendor/cookieconsent-3.1.0/cookieconsent.css">
+    <link type="text/css" rel="stylesheet" href="/assets/css/shmu.css?ver=202610190736">
+
+
+        <title>Operatívne údaje staníc podzemných vôd - SHMÚ</title>
+
+    <script>
+        window.wn_lang = 'sk';
+        window.shmu_ver = '202610190736'
+        
+    </script>
+    <script src="/assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="/assets/js/shmu.js?ver=202610190736"></script>
+
+    <script type="module" src="/assets/js/vendor/cookieconsent-3.1.0/cookieconsent-config.js"></script>
+
+        <!-- Google Tag Manager -->
+    <script type="text/plain"
+            data-category="analytics"
+            data-service="Google Analytics"
+            >(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PJWC9CR');</script>
+    <!-- End Google Tag Manager -->
+    
+</head>
+<body>
+<script type="text/plain"
+        data-category="analytics"
+        data-service="Facebook">
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '179204109293551',
+            xfbml      : true,
+            version    : 'v5.0'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/sk_SK/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJWC9CR"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+<!--  CONTAINER begin ******************************************* -->
+<div id="container">
+<div class="unsupported-browser"></div>
+<header>
+        <div class="logo">
+        <a title="Slovenský hydrometeorologický ústav" tabindex="0" id="shmu-logo" href="?page=1"><img width="473" height="75" src="/img/shmu-logo-top-sk.png" alt="Slovenský hydrometeorologický ústav"></a>
+    </div>
+        <div class="kolaz img-1">
+        <a href="https://www.minzp.sk/" tabindex="-1" rel="noopener" class="mzp-logo" target="_blank" title="Ministerstvo životného prostredia">
+            <img src="/img/ministerstvo-zivotneho-prostredia-sk.png" width="250" height="55" alt="Ministerstvo životného prostredia">
+        </a>
+    </div>
+</header>
+<nav class="main-nav" aria-label="Hlavná navigácia">
+        <!-- CACHE [PAGE_TOPMENU_sk] - ts:2026-10-28 23:13:45, generated: 11.451ms] -->
+<ul id="menu" role="menubar" aria-label="Hlavná navigácia"><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="0">O SHMÚ</a><ul class="is-submenu" role="menu" aria-label="O SHMÚ"><li role="none"><a href="?page=1793" role="menuitem" tabindex="-1">O nás</a></li><li role="none"><a href="?page=2452" role="menuitem" tabindex="-1">Prezentačné brožúry</a></li><li role="none"><a href="?page=1233" role="menuitem" tabindex="-1">Organizačná štruktúra</a></li><li role="none"><a href="?page=1713" role="menuitem" tabindex="-1">Základné dokumenty</a></li><li role="none"><a href="?page=2043" role="menuitem" tabindex="-1">Certifikáty a osvedčenia</a></li><li role="none"><a href="?page=1714" role="menuitem" tabindex="-1">Výročné správy SHMÚ</a></li><li role="none"><a href="?page=2878" role="menuitem" tabindex="-1">Verejné odpočty SHMÚ</a></li><li role="none"><a href="?page=2795" role="menuitem" tabindex="-1">Správy o vede, výskume a inováciách</a></li><li role="none"><a href="?page=2390" role="menuitem" tabindex="-1">Ochrana osobných údajov</a></li><li role="none"><a href="?page=2018" role="menuitem" tabindex="-1">Verejné obstarávanie</a></li><li role="none"><a href="?page=1715" role="menuitem" tabindex="-1">Ostatné</a></li><li role="none"><a href="?page=2210" role="menuitem" tabindex="-1">Objednávanie prednášok a exkurzií na SHMÚ Bratislava</a></li><li role="none"><a href="?page=2098" role="menuitem" tabindex="-1">Oznamovanie protispoločenskej činnosti</a></li><li role="none"><a href="?page=2784" role="menuitem" tabindex="-1">Plán Rodovej rovnosti SHMÚ</a></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Sprístupňovanie informácií</a><ul class="is-submenu" role="menu" aria-label="Sprístupňovanie informácií"><li role="none"><a href="https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/2000/211/" role="menuitem" tabindex="-1">Zákon č. 211/2000 Z.z. o slobodnom prístupe k informáciám</a></li><li role="none"><a href="?page=1712" role="menuitem" tabindex="-1">Poskytovanie informácií</a></li><li role="none"><a href="/File/Ziadost_o_spristupnenie_informacii_podla_zakona_c_211.doc" role="menuitem" tabindex="-1">Žiadosť o sprístupnenie informácií - tlačivo</a></li><li role="none"><a href="?page=1721" role="menuitem" tabindex="-1">Žiadosť o sprístupnenie informácií - elektronický formulár</a></li><li role="none"><a href="?page=1792" role="menuitem" tabindex="-1">Sadzobník</a></li></ul></li><li role="none"><a href="?page=1716" role="menuitem" tabindex="-1">Informácie pre študentov a školy</a></li><li role="none"><a href="?page=1824" role="menuitem" tabindex="-1">Voľné pracovné pozície</a></li><li role="none"><a href="?page=2669" role="menuitem" tabindex="-1">Podcasty SHMÚ</a></li></ul></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Produkty SHMÚ</a><ul class="is-submenu" role="menu" aria-label="Produkty SHMÚ"><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Meteorológia</a><ul class="is-submenu" role="menu" aria-label="Meteorológia"><li role="none"><a href="?page=987" role="menuitem" tabindex="-1">Výstrahy</a></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Počasie</a><ul class="is-submenu" role="menu" aria-label="Počasie"><li role="none"><a href="?page=59" role="menuitem" tabindex="-1">Aktuálne počasie - Slovensko</a></li><li role="none"><a href="?page=60" role="menuitem" tabindex="-1">Aktuálne počasie - Európa</a></li><li role="none"><a href="?page=980" role="menuitem" tabindex="-1">Prízemné tlakové pole</a></li><li role="none"><a href="?page=1110" role="menuitem" tabindex="-1">Prehľad počasia za týždeň</a></li><li role="none"><a href="?page=1113" role="menuitem" tabindex="-1">Prehľad počasia za mesiac</a></li></ul></li><li role="none"><a href="?page=1910" role="menuitem" tabindex="-1">Stručná predpoveď</a></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Rozšírená predpoveď</a><ul class="is-submenu" role="menu" aria-label="Rozšírená predpoveď"><li role="none"><a href="?page=58" role="menuitem" tabindex="-1">Pre Slovensko</a></li><li role="none"><a href="?page=103" role="menuitem" tabindex="-1">Pre západné Slovensko</a></li><li role="none"><a href="?page=104" role="menuitem" tabindex="-1">Pre stredné Slovensko</a></li><li role="none"><a href="?page=105" role="menuitem" tabindex="-1">Pre východné Slovensko</a></li><li role="none"><a href="?page=106" role="menuitem" tabindex="-1">Pre Bratislavu</a></li><li role="none"><a href="?page=107" role="menuitem" tabindex="-1">Pre Tatry</a></li></ul></li><li role="none"><a href="?page=2882" role="menuitem" tabindex="-1">Grafické zobrazenie textových predpovedí</a></li><li role="none"><a href="?page=2870" role="menuitem" tabindex="-1">Mesačná predpoveď počasia</a></li><li role="none"><a href="?page=1755" role="menuitem" tabindex="-1">Systém INCA</a></li><li role="none"><a href="?page=2673" role="menuitem" tabindex="-1">EPSGRAMY</a></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Model ALADIN - na 3 dni</a><ul class="is-submenu" role="menu" aria-label="Model ALADIN - na 3 dni"><li role="none"><a href="?page=472" role="menuitem" tabindex="-1">Predpovede modelu ALADIN</a></li><li role="none"><a href="?page=769" role="menuitem" tabindex="-1">Meteogram - na 3 dni</a></li><li role="none"><a href="?page=2199" role="menuitem" tabindex="-1">ALADIN Európa</a></li><li role="none"><a href="?page=473" role="menuitem" tabindex="-1">Teplota</a></li><li role="none"><a href="?page=474" role="menuitem" tabindex="-1">Vietor</a></li><li role="none"><a href="?page=475" role="menuitem" tabindex="-1">Oblačnosť</a></li><li role="none"><a href="?page=476" role="menuitem" tabindex="-1">Zrážky</a></li><li role="none"><a href="?page=1642" role="menuitem" tabindex="-1">Výškové mapy</a></li><li role="none"><a href="?page=477" role="menuitem" tabindex="-1">PsTEMP - vertikálne profily</a></li><li role="none"><a href="?page=478" role="menuitem" tabindex="-1">PsTEMP - časové rezy</a></li><li role="none"><a href="?page=479" role="menuitem" tabindex="-1">PsTEMP - profil vetra</a></li><li role="none"><a href="?page=1016" role="menuitem" tabindex="-1">model ALADIN - popis</a></li></ul></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Model ECMWF - na 10 dní</a><ul class="is-submenu" role="menu" aria-label="Model ECMWF - na 10 dní"><li role="none"><a href="?page=1186" role="menuitem" tabindex="-1">Meteogram - na 10 dní</a></li><li role="none"><a href="?page=1184" role="menuitem" tabindex="-1">Epsgram - na 8 dní</a></li><li role="none"><a href="?page=1164" role="menuitem" tabindex="-1">Model ECMWF - popis</a></li></ul></li><li role="none"><a href="?page=2656" role="menuitem" tabindex="-1">Epsgram A-LAEF - na 3 dni</a></li><li role="none"><a href="http://www.shmu.sk/produkty/nwp/alaef/" role="menuitem" tabindex="-1">Mapy A-LAEF</a></li><li role="none"><a href="?page=2322" role="menuitem" tabindex="-1">Radary</a></li><li role="none"><a href="?page=66" role="menuitem" tabindex="-1">Družice</a></li><li role="none"><a href="?page=2266" role="menuitem" tabindex="-1">Kamery</a></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Ozónové spravodajstvo</a><ul class="is-submenu" role="menu" aria-label="Ozónové spravodajstvo"><li role="none"><a href="?page=7" role="menuitem" tabindex="-1">Aktuálny stav ozónu</a></li><li role="none"><a href="?page=2423" role="menuitem" tabindex="-1">Priebeh UV Index-u</a></li><li role="none"><a href="?page=2424" role="menuitem" tabindex="-1">Predpoveď UV index-u</a></li><li role="none"><a href="?page=2458" role="menuitem" tabindex="-1">Javy a pojmy</a></li><li role="none"><a href="?page=2459" role="menuitem" tabindex="-1">Otázky a odpovede</a></li><li role="none"><a href="?page=2463" role="menuitem" tabindex="-1">Vývoj v SR</a></li><li role="none"><a href="?page=55" role="menuitem" tabindex="-1">Kontakt</a></li></ul></li><li role="none"><a href="?page=68" role="menuitem" tabindex="-1">Snehové spravodajstvo</a></li><li role="none"><a href="?page=8" role="menuitem" tabindex="-1">Typy poveternostných situácií</a></li><li role="none"><a href="?page=2049&amp;skupina=1" role="menuitem" tabindex="-1">Aktuálne odborné informácie</a></li><li role="none"><a href="?page=31" role="menuitem" tabindex="-1">Meteorologický časopis</a></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Napíšte nám ...</a><ul class="is-submenu" role="menu" aria-label="Napíšte nám ..."><li role="none"><a href="?page=1007" role="menuitem" tabindex="-1">Pozorovali ste búrku?</a></li><li role="none"><a href="?page=1337" role="menuitem" tabindex="-1">Pozorovali ste tornádo?</a></li><li role="none"><a href="/?page=1138" role="menuitem" tabindex="-1">Vaše fotografie</a></li></ul></li><li role="none"><a href="?page=975" role="menuitem" tabindex="-1">Články, prednášky, informácie ...</a></li><li role="none"><a href="?page=482" role="menuitem" tabindex="-1">Otázky, odpovede ...</a></li><li role="none"><a href="?page=1029" role="menuitem" tabindex="-1">Rozhovor s meteorológom</a></li><li role="none"><a href="?page=1095" role="menuitem" tabindex="-1">Slovník pojmov, výrazov</a></li></ul></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Hydrológia</a><ul class="is-submenu" role="menu" aria-label="Hydrológia"><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Hydrologické spravodajstvo</a><ul class="is-submenu" role="menu" aria-label="Hydrologické spravodajstvo"><li role="none"><a href="?page=10" role="menuitem" tabindex="-1">Hydrologické spravodajstvo</a></li><li role="none"><a href="?page=110" role="menuitem" tabindex="-1">Správy - celé Slovensko</a></li><li role="none"><a href="?page=111" role="menuitem" tabindex="-1">Situácia a vývoj</a></li><li role="none"><a href="?page=112" role="menuitem" tabindex="-1">Morava</a></li><li role="none"><a href="?page=2078" role="menuitem" tabindex="-1">Spravodajstvo pre Maďarsko</a></li><li role="none"><a href="?page=113" role="menuitem" tabindex="-1">Turistika a rybolov</a></li><li role="none"><a href="?page=981" role="menuitem" tabindex="-1">Teploty vodných nádrží</a></li><li role="none"><a href="?page=935" role="menuitem" tabindex="-1">Pre povodie Dunaja</a></li><li role="none"><a href="?page=765" role="menuitem" tabindex="-1">Vodomerné stanice</a></li><li role="none"><a href="?page=838" role="menuitem" tabindex="-1">Zrážkomerné stanice</a></li><li role="none"><a href="?page=128" role="menuitem" tabindex="-1">Povodňové správy</a></li><li role="none"><a href="?page=687" role="menuitem" tabindex="-1">Snehové spravodajstvo</a></li></ul></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Úsek hydrologická služba</a><ul class="is-submenu" role="menu" aria-label="Úsek hydrologická služba"><li role="none"><a href="?page=946" role="menuitem" tabindex="-1">Úsek hydrologická služba</a></li><li role="none"><a href="?page=948" role="menuitem" tabindex="-1">Odbor Kvantita povrchových vôd</a></li><li role="none"><a href="?page=1774" role="menuitem" tabindex="-1">Odbor Kvalita povrchových vôd</a></li><li role="none"><a href="?page=949" role="menuitem" tabindex="-1">Odbor Podzemné vody</a></li><li role="none"><a href="?page=2481" role="menuitem" tabindex="-1">Regionálne pracovisko Banská Bystrica</a></li><li role="none"><a href="?page=2482" role="menuitem" tabindex="-1">Regionálne pracovisko Košice</a></li><li role="none"><a href="?page=2483" role="menuitem" tabindex="-1">Regionálne pracovisko Žilina</a></li><li role="none"><a href="?page=1094" role="menuitem" tabindex="-1">Súhrnná evidencia o vodách</a></li><li role="none"><a href="?page=2160" role="menuitem" tabindex="-1">Štátna hydrologická sieť SHMÚ</a></li><li role="none"><a href="?page=2079" role="menuitem" tabindex="-1">Projekty</a></li><li role="none"><a href="?page=2176" role="menuitem" tabindex="-1">Publikácie</a></li></ul></li></ul></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Kvalita ovzdušia</a><ul class="is-submenu" role="menu" aria-label="Kvalita ovzdušia"><li role="none"><a href="?page=992" role="menuitem" tabindex="-1">Emisie</a></li><li role="none"><a href="?page=997" role="menuitem" tabindex="-1">Ročné správy o kvalite ovzdušia</a></li><li role="none"><a href="?page=2381" role="menuitem" tabindex="-1">Mesačné správy o kvalite ovzdušia </a></li><li role="none"><a href="?page=2891" role="menuitem" tabindex="-1">Služby CAMS</a></li><li role="none"><a href="?page=1&amp;id=oko_kriteria" role="menuitem" tabindex="-1">Limitné hodnoty koncentrácií</a></li><li role="none"><a href="?page=2675" role="menuitem" tabindex="-1">Oblasti riadenia kvality ovzdušia</a></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Národná monitorovacia sieť kvality ovzdušia (NMSKO)</a><ul class="is-submenu" role="menu" aria-label="Národná monitorovacia sieť kvality ovzdušia (NMSKO)"><li role="none"><a href="?page=1&amp;id=oko_monit_siet" role="menuitem" tabindex="-1">Národná monitorovacia sieť kvality ovzdušia</a></li><li role="none"><a href="?page=225" role="menuitem" tabindex="-1">Merané veličiny a metódy pozorovania</a></li></ul></li><li role="none"><a href="?page=229" role="menuitem" tabindex="-1">Vplyv znečisťujúcich látok</a></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Zóny a aglomerácie</a><ul class="is-submenu" role="menu" aria-label="Zóny a aglomerácie"><li role="none"><a href="https://www.shmu.sk/sk/?page=2873" role="menuitem" tabindex="-1">Vymedzenie oblastí riadenia kvality ovzdušia pre rok 2024</a></li><li role="none"><a href="?page=2768" role="menuitem" tabindex="-1">Vymedzenie oblastí riadenia kvality ovzdušia pre rok 2023</a></li><li role="none"><a href="?page=2674" role="menuitem" tabindex="-1">Vymedzenie oblastí riadenia kvality ovzdušia pre rok 2022</a></li><li role="none"><a href="?page=2186" role="menuitem" tabindex="-1">Vymedzenie oblastí riadenia kvality ovzdušia pre rok 2021</a></li><li role="none"><a href="?page=231" role="menuitem" tabindex="-1">Rozdelenie územia SR na zóny a aglomerácie</a></li><li role="none"><a href="?page=2699" role="menuitem" tabindex="-1">Podklady pre Programy na zlepšenie kvality ovzdušia</a></li></ul></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Modelovanie kvality ovzdušia</a><ul class="is-submenu" role="menu" aria-label="Modelovanie kvality ovzdušia"><li role="none"><a href="?page=2895" role="menuitem" tabindex="-1">Modelovanie kvality ovzdušia</a></li><li role="none"><a href="?page=2665" role="menuitem" tabindex="-1">CALPUFF</a></li><li role="none"><a href="?page=2663" role="menuitem" tabindex="-1">CMAQ</a></li><li role="none"><a href="?page=2659" role="menuitem" tabindex="-1">RIO</a></li><li role="none"><a href="?page=2664" role="menuitem" tabindex="-1">ATMOPLAN</a></li></ul></li><li role="none"><a href="?page=996" role="menuitem" tabindex="-1" target="_blank">Štúdie, analýzy a ďalšie informácie</a></li><li role="none"><a href="?page=2699" role="menuitem" tabindex="-1">Hodnotenia pre Programy na zlepšenie kvality ovzdušia</a></li><li role="none"><a href="?page=1&amp;id=oko_faq" role="menuitem" tabindex="-1">Časté otázky</a></li></ul></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Klimatológia</a><ul class="is-submenu" role="menu" aria-label="Klimatológia"><li role="none"><a href="?page=1798" role="menuitem" tabindex="-1">Odbor Klimatologická služba</a></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Klimatologické spravodajstvo</a><ul class="is-submenu" role="menu" aria-label="Klimatologické spravodajstvo"><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Klimagramy</a><ul class="is-submenu" role="menu" aria-label="Klimagramy"><li role="none"><a href="?page=1783" role="menuitem" tabindex="-1">Teplota vzduchu </a></li><li role="none"><a href="?page=2120" role="menuitem" tabindex="-1">Teplota pôdy</a></li><li role="none"><a href="?page=1784" role="menuitem" tabindex="-1">Atmosférické zrážky</a></li><li role="none"><a href="?page=1785" role="menuitem" tabindex="-1">Tlak vzduchu</a></li><li role="none"><a href="?page=1786" role="menuitem" tabindex="-1">Slnečný svit  </a></li></ul></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Mapové produkty</a><ul class="is-submenu" role="menu" aria-label="Mapové produkty"><li role="none"><a href="?page=2901" role="menuitem" tabindex="-1">Denné mapy</a></li><li role="none"><a href="?page=1609" role="menuitem" tabindex="-1">Týždenné mapy</a></li><li role="none"><a href="?page=1610" role="menuitem" tabindex="-1">Mesačné mapy</a></li><li role="none"><a href="?page=2940" role="menuitem" tabindex="-1">Index požiarneho nebezpečenstva</a></li><li role="none"><a href="?page=2941" role="menuitem" tabindex="-1">Bioklimatologické produkty</a></li></ul></li><li role="none"><a href="?page=2166" role="menuitem" tabindex="-1">Monitoring sucha</a></li></ul></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Zmena klímy</a><ul class="is-submenu" role="menu" aria-label="Zmena klímy"><li role="none"><a href="?page=1070" role="menuitem" tabindex="-1">Klimatický systém Zeme</a></li><li role="none"><a href="?page=1067" role="menuitem" tabindex="-1">Klíma v histórii Zeme </a></li><li role="none"><a href="?page=1071" role="menuitem" tabindex="-1">Človekom spôsobená zmena klímy</a></li><li role="none"><a href="?page=1069" role="menuitem" tabindex="-1">Scenáre budúcej klímy</a></li><li role="none"><a href="?page=1379" role="menuitem" tabindex="-1">Výskum zmeny klímy</a></li></ul></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Klíma Slovenska</a><ul class="is-submenu" role="menu" aria-label="Klíma Slovenska"><li role="none"><a href="?page=1064" role="menuitem" tabindex="-1">Klimatické pomery SR  </a></li><li role="none"><a href="?page=1384" role="menuitem" tabindex="-1">Historické extrémy</a></li><li role="none"><a href="?page=1637" role="menuitem" tabindex="-1">Singularity</a></li></ul></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Fenológia</a><ul class="is-submenu" role="menu" aria-label="Fenológia"><li role="none"><a href="?page=2852" role="menuitem" tabindex="-1">Čo je fenológia</a></li><li role="none"><a href="?page=1549" role="menuitem" tabindex="-1">Metodiky</a></li></ul></li><li role="none"><a href="?page=2932" role="menuitem" tabindex="-1">Staničná sieť</a></li><li role="none"><a href="?page=1613" role="menuitem" tabindex="-1">Bulletin MaK</a></li><li role="none"><a href="?page=1553" role="menuitem" tabindex="-1">Slovník klimatologických pojmov</a></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Publikácie</a><ul class="is-submenu" role="menu" aria-label="Publikácie"><li role="none"><a href="?page=2779" role="menuitem" tabindex="-1">Radiačné ročenky</a></li><li role="none"><a href="?page=1794" role="menuitem" tabindex="-1">Klimatický atlas Slovenska</a></li><li role="none"><a href="?page=1550" role="menuitem" tabindex="-1">Zborníky</a></li><li role="none"><a href="?page=2869" role="menuitem" tabindex="-1">Zborníky NKP</a></li></ul></li></ul></li><li role="none"><a href="?page=34" role="menuitem" tabindex="-1">Letecká meteorológia</a></li><li class="has-submenu"  role="none"><a href="#!" aria-haspopup="true" aria-expanded="false" role="menuitem" tabindex="-1">Čiastkový monitorovací systém</a><ul class="is-submenu" role="menu" aria-label="Čiastkový monitorovací systém"><li role="none"><a href="?page=21" role="menuitem" tabindex="-1">Meteorológia a klimatológia</a></li><li role="none"><a href="?page=19" role="menuitem" tabindex="-1">Ovzdušie</a></li><li role="none"><a href="?page=20" role="menuitem" tabindex="-1">Rádioaktivita</a></li></ul></li><li role="none"><a href="http://nrz.shmu.sk/" role="menuitem" tabindex="-1">Národný register znečisťovania</a></li></ul></li><li role="none"><a href="?page=569" role="menuitem" tabindex="-1">Projekty SHMÚ</a></li><li role="none"><a href="?page=5" role="menuitem" tabindex="-1">Kontakt</a></li></ul>
+<!-- /CACHE -->
+
+    <ul id="lang-nav" aria-label="Zmena jazykovej verzie stránok">
+                <li class="english">
+            <a title="Zmena jazykovej verzie stránky na EN" aria-label="Zmena jazykovej verzie stránky na EN" href="/en/?page=1&amp;id=pzv_kvantita"><img src="/img/lang-en.gif" width="22" height="14" alt="Zmena jazykovej verzie stránky na EN"></a>
+        </li>
+    </ul>
+    <form id="searchform" action="?" method="get">
+        <p><input type="hidden" name="page" value="976">
+            <label for="search">vyhľadávanie</label>
+            <input aria-labelledby="btn_search" type="text" id="search" placeholder="zadajte hľadaný text..." required name="q" value="">
+            <button type="submit" id="btn_search">Hľadať</button>
+        </p>
+    </form>
+</nav>
+
+
+
+<!-- CONTENT -->
+<main id="content" tabindex="-1">
+    <div class="warnings-banners">
+<!-- CAHCE [PAGE_WARNINGS_BANNERS_sk] - ts:2026-10-28 23:13:15, generated: 15.232ms] -->
+<div class="vystrahy-banner warn_1"><a href="?page=987" title="Zobraziť meteorologické výstrahy"><span>SHMÚ vydal meteorologické výstrahy - 1. stupeň</span> <img class="warn_img" src="/img/vystrahy/znacky/hmla1.png" width="37" height="37" title="1. stupeň - Hmla" alt="1. stupeň - Hmla" /></a></div>
+<!-- /CACHE --></div>
+
+
+<div id="tab-content">
+    <nav class="nav-tabs" aria-label="Rýchla navigácia pomocou záložiek">
+        <!-- FIRST-LEVEL -->
+        <div id="first-level" role="navigation" aria-label="Prvá úroveň záložiek">
+            <ul id="flevel">
+                <li class="meteo"><a  href="?page=1&amp;id=meteo_gapocasie_sk">Meteorologické spravodajstvo</a></li>
+                <li class="hydro selected"><a  aria-current="true" href="?page=1&amp;id=ran_sprav">Hydrologické spravodajstvo</a></li>
+                <li class="oko"><a  href="?page=1&amp;id=oko_mapy">Spravodajstvo kvality ovzdušia</a></li>
+                <li class="klimat"><a  href="?page=1&amp;id=klimat_operativneudaje1">Klimatologické spravodajstvo</a></li>
+            </ul>
+        </div>
+        <!-- /FIRST-LEVEL -->
+
+        <!-- SECOND-LEVEL -->
+        <div id="second-level" role="navigation" aria-label="Druhá úroveň záložiek">
+                                        <ul class="hydro">
+                    <li><a  href="?page=1&amp;id=ran_sprav">Hydrologické&nbsp;spravodajstvo</a></li>
+                    <li><a  href="?page=1&amp;id=sit_cele">Hydrologická situácia a vývoj</a></li>
+                    <li><a  href="?page=1&amp;id=hydro_vod_all">Vodomerné stanice</a></li>
+                    <li><a  href="?page=1&amp;id=hydro_zra_all">Zrážkomerné stanice</a></li>
+                    <li class="selected"><a  aria-current="true"href="?page=1&amp;id=monitoring_sucha">Monitoring sucha</a></li>
+                    <li><a  href="?page=1&amp;id=kvalita_povrchovych_vod">Kvalita vôd</a></li>
+                    <li><a  href="?page=1&amp;id=hydro_chvo">CHVO</a></li>
+                </ul>
+                        
+                    </div>
+        <!-- /SECOND-LEVEL -->
+
+
+        <!-- THIRD-LEVEL -->
+        <div id="third-level">
+            <!-- METEO -->
+            
+            
+            
+            
+
+            
+
+
+
+            
+            
+
+            
+            
+            
+            
+            
+
+            <!-- /METEO -->
+
+            
+            <!-- HYDRO -->
+            
+            
+            
+
+            
+                            <ul class="hydro">
+                    <li ><a  href="?page=1&amp;id=monitoring_sucha">Monitoring sucha na Slovensku</a></li>
+                    <li ><a  href="?page=1&amp;id=meteo_sucho">Meteorologické sucho</a></li>
+                    <li ><a  href="?page=1&amp;id=hydro_sucho"  >Hydrologické sucho</a></li>
+                    <li class="selected"><a  aria-current="true" href="?page=1&amp;id=pzv_kvantita"  >Podzemné vody a výskyt sucha</a></li>
+                    <li ><a  href="//www.intersucho.sk/" target="_blank"  >Pôdne sucho</a></li>
+                    <li ><a href="https://clim4cast.eu/sk/" rel="noopener,noreferrer" target="_blank"  >Monitoring sucha v Európe</a></li>
+                </ul>
+            
+            
+            
+
+
+            <!-- /HYDRO -->
+
+            <!-- OKO -->
+            
+            
+            
+            
+            
+            <!--/OKO -->
+
+            <!-- KLIMAT -->
+            
+            
+            <!-- /KLIMAT -->
+
+        </div>
+        <!-- /THIRD-LEVEL -->
+
+    </nav>
+
+    
+<!-- MAINCONTENT -->
+<div id="maincontent">
+    <section class="mp-section">
+        
+<script src="/js/ol/v4.6.4/ol.js"></script>
+<link type="text/css" rel="stylesheet" href="/js/ol/v4.6.4/ol.css" />
+
+
+<script src="/assets/js/vendor/select2-4.0.13/select2.full.min.js"></script>
+<script src="/assets/js/vendor/select2-4.0.13/sk.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/assets/js/vendor/select2-4.0.13/select2.min.css" />
+
+
+<script src="/assets/js/vendor/moment/moment.min.js"></script>
+<script src="/assets/js/vendor/moment/moment.sk.js"></script>
+<script src="/assets/js/vendor/moment/moment-timezone.min.js"></script>
+
+
+<script src="/assets/js/locales/highcharts/sk.js"></script>
+<script src="/assets/js/vendor/highcharts-12.2.0/highcharts.js"></script>
+<script src="/assets/js/vendor/highcharts-12.2.0/modules/accessibility.js"></script>
+<script>
+
+    if (window.wn_lang === 'sk') { 
+        Highcharts.setOptions({
+            lang: get_highcharts_sk_lang()
+        });
+    }
+
+
+
+</script>
+
+
+<script src="/assets/js/vendor/jquery-ui-1.14.1.custom/jquery-ui.min.js"></script>
+<script src="/assets/js/vendor/jquery-ui-1.14.1.custom/external/datepicker-sk.js">"></script>
+<link type="text/css" rel="stylesheet" href="/assets/js/vendor/jquery-ui-1.14.1.custom/jquery-ui.min.css" />
+<link type="text/css" rel="stylesheet" href="/assets/js/vendor/jquery-ui-1.14.1.custom/jquery-ui.theme.min.css" />
+
+
+<script src="/assets/js/vendor/jquery.mask.min.js"></script>
+
+
+    <script>
+        Highcharts.setOptions({global: {useUTC:false}});
+    </script>
+
+<h1>Operatívne údaje pozorovacích objektov podzemných vôd a hodnotenie výskytu sucha</h1><script>
+    var ttip_service = "/popups/hydro/podzemne_vody/pv_ttip.php";
+</script>
+
+<form action="?" method="get">
+    <input type="hidden" name="page" value="1">
+    <input type="hidden" name="typ" value="sonda">
+            <div class="float-left"><label for="dt" id="datepickerLabel" class="w50 fl tr">Dátum:</label>
+
+            <input type="text" id="dt" name="dt" class="w125 fl" value="28.10.2026" onchange="setDtAndReload()">
+        </div>
+
+        <div class="float-left ml-2">
+            <button type="button" aria-label="Predchádzajúci mesiac" class="button w50 button-icon-only" id="b_prev_m" onclick="setPrevMonth();"><i class="icon-skip_previous"></i></button>
+            <button type="button" aria-label="Predchádzajúci deň" class="button w50 button-icon-only" id="b_prev_d" onclick="setPrevDay();"><i class="icon-navigate_before"></i></button>
+            <button type="button" aria-label="Nasledujúci deň" class="button w50 button-icon-only" id="b_next_d" onclick="setNextDay();"><i class="icon-navigate_next"></i></button>
+            <button type="button" aria-label="Nasledujúci mesiac" class="button w50 button-icon-only" id="b_next_m" onclick="setNextMonth();"><i class="icon-skip_next"></i></button>
+        </div>
+    <div class="float-left ml-3">
+        <label for="s_id" class="tr w75">Stanica:</label> <select name="s_id" id="s_id"><option></option>
+<option value="2">5 - Kopčany (sonda)</option>
+<option value="166">8 - Reca (sonda)</option>
+<option value="168">68 - Bratislava - Devínska Nová Ves (sonda)</option>
+<option value="120">76 - Lakšárska Nová Ves (sonda)</option>
+<option value="121">86 - Malacky (sonda)</option>
+<option value="122">185 - Považany (sonda)</option>
+<option value="123">254 - Opatovce nad Nitrou (sonda)</option>
+<option value="124">256 - Nováky - Sever (sonda)</option>
+<option value="125">273 - Veľké Chlievany (sonda)</option>
+<option value="126">280 - Bošany (sonda)</option>
+<option value="68">310 - Svarín (prameň)</option>
+<option value="110">320 - Pribylina (prameň)</option>
+<option value="111">322 - Pribylina (prameň)</option>
+<option value="8">346 - Vavrišovo (sonda)</option>
+<option value="113">352 - Liptovský Ján (prameň)</option>
+<option value="127">355 - Vieska nad Žitavou (sonda)</option>
+<option value="76">364 - Žiar (prameň)</option>
+<option value="114">365 - Huty (prameň)</option>
+<option value="129">369 - Selice (sonda)</option>
+<option value="9">373 - Liptovské Matiašovce (prameň)</option>
+<option value="130">375 - Dvory nad Žitavou (sonda)</option>
+<option value="131">377 - Nové Zámky - Sever (sonda)</option>
+<option value="75">402 - Demänová (prameň)</option>
+<option value="10">413 - Kysucké Nové Mesto (sonda)</option>
+<option value="104">432 - Dolný Kubín - Geceľ (sonda)</option>
+<option value="11">466 - Ivančiná (sonda)</option>
+<option value="105">467 - Blažovce (sonda)</option>
+<option value="71">501 - Vitanová - Oravice (prameň)</option>
+<option value="72">536 - Zuberec (prameň)</option>
+<option value="88">548 - Medvecké (sonda)</option>
+<option value="89">552 - Ondrejovce (sonda)</option>
+<option value="85">564 - Čata - Východ (sonda)</option>
+<option value="83">566 - Hotianska Vrbica (sonda)</option>
+<option value="12">569 - Šalov - Hron (sonda)</option>
+<option value="84">575 - Sykenica - Trhyňa (sonda)</option>
+<option value="82">583 - Mýtne Ludany - Východ (sonda)</option>
+<option value="90">586 - Horná Seč (sonda)</option>
+<option value="91">589 - Nový Tekov (sonda)</option>
+<option value="92">597 - Veľké Kozmálovce (sonda)</option>
+<option value="14">606 - Hadovce  (sonda)</option>
+<option value="115">613 - Čremošné (prameň)</option>
+<option value="15">618 - Zemianska Olča (sonda)</option>
+<option value="116">630 - Vrícko (prameň)</option>
+<option value="117">646 - Valča (prameň)</option>
+<option value="132">672 - Veľké Blahovo - Lúky (sonda)</option>
+<option value="96">753 - Zvolen (sonda)</option>
+<option value="73">757 - Čadca (prameň)</option>
+<option value="119">760 - Belá - Kubiková (prameň)</option>
+<option value="95">765 - Hliník nad Hronom (sonda)</option>
+<option value="94">774 - Žarnovica (sonda)</option>
+<option value="161">778 - Rajecká Lesná (prameň)</option>
+<option value="16">784 - Tekovská Breznica (sonda)</option>
+<option value="93">788 - Kozárovce - Pri kostole (sonda)</option>
+<option value="169">797 - Bratislava - Rusovce - hranica (sonda)</option>
+<option value="17">814 - Slovenské Ďarmoty (sonda)</option>
+<option value="103">817 - Ipeľský Sokolec (sonda)</option>
+<option value="87">821 - Malá Čalomija (sonda)</option>
+<option value="86">823 - Malá Čalomija (sonda)</option>
+<option value="98">835 - Bušince (sonda)</option>
+<option value="60">850 - Holiša (sonda)</option>
+<option value="118">876 - Pružina (prameň)</option>
+<option value="97">877 - Zolná (sonda)</option>
+<option value="18">888 - Banská Bystrica - Majer (sonda)</option>
+<option value="19">896 - Brezno (sonda)</option>
+<option value="99">898 - Polomka - Hámor (sonda)</option>
+<option value="101">903 - Betliar (sonda)</option>
+<option value="47">904 - Rožňava (sonda)</option>
+<option value="20">910 - Čoltovo (sonda)</option>
+<option value="21">914 - Včelince (sonda)</option>
+<option value="100">937 - Revúca (sonda)</option>
+<option value="62">955 - Jesenské (sonda)</option>
+<option value="64">969 - Skerešovo (sonda)</option>
+<option value="22">978 - Bušovce (sonda)</option>
+<option value="139">989 - Forbasy (sonda)</option>
+<option value="140">1041 - Budimír (sonda)</option>
+<option value="141">1069 - Krivany (sonda)</option>
+<option value="142">1079 - Trstené pri Hornáde (sonda)</option>
+<option value="143">1090 - Medzev (sonda)</option>
+<option value="135">1096 - Krásna Ves (prameň)</option>
+<option value="144">1101 - Nálepkovo (sonda)</option>
+<option value="145">1111 - Veľký Šariš (sonda)</option>
+<option value="147">1138 - Vyšné Čabiny - Krásny Brod (sonda)</option>
+<option value="148">1156 - Vranov nad Topľou - Hencovce (sonda)</option>
+<option value="149">1160 - Parchovany (sonda)</option>
+<option value="24">1183 - Voľa - Stankovce (sonda)</option>
+<option value="150">1199 - Budkovce (sonda)</option>
+<option value="25">1201 - Telgárt (prameň)</option>
+<option value="151">1238 - Stretávka (sonda)</option>
+<option value="152">1247 - Blatné Revištia (sonda)</option>
+<option value="77">1266 - Molča (prameň)</option>
+<option value="154">1270 - Trebišov - Cukrovar (sonda)</option>
+<option value="29">1291 - Kordíky (prameň)</option>
+<option value="31">1305 - Nemecká (prameň)</option>
+<option value="33">1312 - Dolná Lehota (prameň)</option>
+<option value="155">1313 - Dubinné (sonda)</option>
+<option value="78">1315 - Dolná Lehota (prameň)</option>
+<option value="156">1337 - Tibava (sonda)</option>
+<option value="65">1339 - Čičarovce (sonda)</option>
+<option value="157">1344 - Michaľany (sonda)</option>
+<option value="158">1347 - Miňovce (sonda)</option>
+<option value="159">1350 - Koškovce (sonda)</option>
+<option value="34">1508 - Radzovce (prameň)</option>
+<option value="35">1862 - Krásnohorská Dlhá Lúka (prameň)</option>
+<option value="36">1869 - Slavec - Čierna vyvieračka (prameň)</option>
+<option value="58">1920 - Gemerské Teplice (prameň)</option>
+<option value="136">2008 - Jasov (prameň)</option>
+<option value="39">2024 - Silická Jablonica (prameň)</option>
+<option value="137">2116 - Hranovnica (prameň)</option>
+<option value="41">2125 - Trstice (sonda)</option>
+<option value="138">2171 - Telgárt (prameň)</option>
+<option value="66">2776 - Žarnovica (sonda)</option>
+<option value="81">2808 - Tupá (sonda)</option>
+<option value="59">2870 - Chľaba (sonda)</option>
+<option value="48">2915 - Rumince (sonda)</option>
+<option value="44">3024 - Valaliky - Buzice (sonda)</option>
+<option value="45">3087 - Žarnov (sonda)</option>
+<option value="106">5365 - Liptovský Ján M-65 (sonda)</option>
+<option value="167">5369 - Hybe M-69 (sonda)</option>
+<option value="102">5382 - Lučatín M-82 (sonda)</option>
+<option value="133">7326 - Bodíky (sonda)</option></select>
+    </div>
+
+    <div class="clearfix"></div>
+    <hr class="border grey" />
+    <div class="mt-2">
+        <input type="checkbox" checked="checked" onchange="ol_onoff_layer(skLayer, this)" name="layer_sk" id="layer_sk" class="fl"><label class="w150 fl tl pl-1 lh-base" for="layer_sk">Zobraziť hranice SK</label>
+        <input type="checkbox" checked="checked" onchange="ol_onoff_layer(riekyLayer, this)" name="layer_rieky" id="layer_rieky" class="fl"><label class="w125 fl tl pl-1 lh-base" for="layer_rieky">Zobraziť rieky</label>
+        <input type="checkbox" checked="checked" onchange="ol_onoff_layer(povodiaLayer, this)" name="layer_povodia" id="layer_povodia" class="fl"><label class="w125 fl tl pl-1 lh-base" for="layer_povodia">Zobraziť povodia</label>
+        <input type="checkbox" checked="checked" onchange="vectorSource.refresh()" name="layer_sondy" id="layer_sondy" class="fl"><label class="w75 fl tl pl-1 lh-base" for="layer_sondy">Sondy</label>
+        <input type="checkbox" checked="checked" onchange="vectorSource.refresh()" name="layer_pramene" id="layer_pramene" class="fl"><label class="w75 fl tl pl-1 lh-base" for="layer_pramene">Pramene</label>
+        <input type="checkbox" checked="checked" onchange="ol_onoff_layer(osmLayer, this)" name="layer_bg" id="layer_bg" class="fl"><label class="w125 fl tl pl-1 lh-base" for="layer_bg">Podkladová mapa</label>
+    </div>
+
+    <div class="clearfix"></div>
+
+</form>
+
+<div class="position-relative">
+    <div id="ms_map" class="ms_map">
+        <div id="ms-popup" class="ol-popup pzv-sucho">
+            <div id="s_ttip"></div>
+        </div>
+        <div style="right:120px; top:15px; display: none; z-index:100" class="position-absolute" id="hs_loader"><img src="/img/loader.gif" alt="Načítavam údaje..."></div>
+    </div>
+</div>
+
+    <h3>Legenda</h3>
+    <div class="text-left"><img alt="Legenda k farebnýn bodom na mape" src="/img/hydro/sucho/pzv_legenda5.png"></div>
+
+<div class="text-center mt-2">
+Údaje sú operatívne, priamo namerané z automatickej stanice online, neprešli kontrolou.
+</div>
+
+
+
+<script>
+    var selected_dt = '28.10.2026';
+    var prev_year = moment(selected_dt, 'DD.MM.YYYY').get('year');
+    var point_url = "/popups/hydro/podzemne_vody/pv_stations_geojson.php?dt=";
+
+</script>
+<script src="/js/ol/podzemne_vody_maps.js?v=202610190736"></script>
+<script>
+
+    var last_sel_s_id = null;
+    var t = null;
+
+    $(document).ready(function() {
+
+        $("#s_id").select2({
+            placeholder: "Vyberte stanicu...",
+            allowClear: true
+        }).on('select2:select', function(e) { setStationAndReload(); } )
+            .focus(function () {
+                $(this).select2('focus');
+            });
+
+
+        map_init();
+        map.addLayer(vectorLayer);
+        utils.refreshGeoJson(point_url + selected_dt, vectorSource);
+
+        $(map.getViewport()).on("click", function(e) {
+            map.forEachFeatureAtPixel(map.getEventPixel(e), function (feature, layer) {
+                var s_id = feature.getId();
+                if (s_id != null || s_id != undefined) {
+                    location.href = "?page=1&id=pzv_kvantita&s_id="+s_id+"&dt="+selected_dt;
+                }
+
+            })
+        });
+
+
+        map.on("pointermove", function (event) {
+            var mouseCoordInMapPixels = [event.originalEvent.offsetX, event.originalEvent.offsetY];
+            var hit = map.forEachFeatureAtPixel(mouseCoordInMapPixels, function (feature, layer) {
+                var s_id = feature.getId();
+                if (s_id != null || s_id != undefined) {
+                    if (s_id != last_sel_s_id) {
+
+                        var map_width = $('#ms_map').width();
+                        var x_pos = event.originalEvent.offsetX;
+                        var y_pos = event.originalEvent.offsetY;
+
+                        var ttip_width = $('#ms-popup').width();
+                        var ttip_height = $('#ms-popup').height();
+
+                        if (x_pos + ttip_width + 30 >= map_width) {
+                            $('#ms-popup').css({left: (- ttip_width - 40) + 'px'});
+                        }
+                        else {
+                            $('#ms-popup').css({left: '10px'});
+                        }
+
+                        if (y_pos < ttip_height + 30) {
+                            $('#ms-popup').css({top: '20px'});
+                        }
+                        else {
+                            $('#ms-popup').css({top: (-ttip_height - 30) + 'px'});
+                        }
+
+                        last_sel_s_id = s_id;
+                        var coordinate = feature.getGeometry().getCoordinates();
+                        var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(coordinate, "EPSG:3857", "EPSG:4326"));
+                        $("#s_ttip").html('<img src="/img/loader.gif">');
+                        $("#s_ttip").load(ttip_service + "?s_id="+s_id+"&dt="+selected_dt+"&map=1");
+                        overlay.setPosition(coordinate);
+                    }
+                }
+                return true;
+            });
+
+            if (hit) { } else {
+                last_sel_s_id = null;  overlay.setPosition(undefined);
+
+            }
+        });
+
+        document.addEventListener('keyup', function (evt) {
+            if (evt.key === "Escape") {
+                last_sel_s_id = null;
+                overlay.setPosition(undefined);
+
+            }
+        });
+
+
+
+        //////////////////
+
+
+            $('#dt').datepicker({
+                showOn: 'button',
+                buttonImage: '/img/icons/calendar-b2.png',
+                buttonImageOnly: false,
+                dateFormat: 'dd.mm.yy',
+                buttonText: 'Vyberte dátum',
+                // dayNamesShort: [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+                showButtonPanel: true,
+                minDate: '01.01.2021',
+                maxDate: '28.10.2026',
+                // closeText: 'Zavrieť',
+                onClose: function(dt) {
+                        // console.log(dt)
+                }
+                }).on('keydown', function(e) {
+                    if (e.key === "Enter") {
+                        e.preventDefault();
+                        setDtAndReload();
+                        return false;
+                    }
+                }).mask('00.00.0000');
+
+            $('.ui-datepicker-trigger').attr('aria-describedby', 'datepickerLabel');
+            $('.ui-datepicker-trigger').attr('id', 'dt-button-1');
+
+            var x = new ACalendarUtilities('dt', 'dt-button-1');
+
+
+
+        
+
+
+
+    });
+
+
+    function setMapCenter(lat, lon)
+    {
+        map.getView().setCenter(ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857'));
+        map.getView().setZoom(11);
+
+    }
+
+    function setStationAndReload()
+    {
+        var i_s_id = $("#s_id").val();
+        location.href = '?page=1&id=pzv_kvantita&dt='+selected_dt+'&s_id=' + i_s_id;
+    }
+
+    ///////////////////// DEN /////////////
+
+    function setDtAndReload()
+    {
+        selected_dt = $("#dt").val();
+        var m_s_dt = moment(selected_dt, 'DD.MM.YYYY');
+        if (!m_s_dt.isValid()) {
+            selected_dt = '28.10.2026';
+            $("#dt").val('28.10.2026');
+        }
+        var selected_dt_ts = moment(selected_dt, 'DD.MM.YYYY').unix();
+        var min_date_ts  = moment('01.01.2021', 'DD.MM.YYYY').unix();
+        var max_date_ts = moment('28.10.2026', 'DD.MM.YYYY').unix();
+        if (selected_dt_ts < min_date_ts)
+        {
+            selected_dt = '01.01.2021';
+            $("#dt").val(selected_dt);
+        }
+        if (selected_dt_ts > max_date_ts)
+        {
+            selected_dt = '28.10.2026';
+            $("#dt").val('28.10.2026');
+        }
+
+        utils.refreshGeoJson(point_url+selected_dt, vectorSource);
+
+    }
+
+
+    function setNextDay()
+    {
+        var m_s_dt = moment(selected_dt, 'DD.MM.YYYY');
+        m_s_dt.add(1, 'days');
+        selected_dt = m_s_dt.format('DD.MM.YYYY');
+        $("#dt").val(selected_dt);
+        setDtAndReload();
+    }
+
+    function setPrevDay()
+    {
+        var m_s_dt = moment(selected_dt, 'DD.MM.YYYY');
+        m_s_dt.add(-1, 'days');
+        selected_dt = m_s_dt.format('DD.MM.YYYY');
+        $("#dt").val(selected_dt);
+        setDtAndReload();
+    }
+
+    function setNextMonth()
+    {
+        var m_s_dt = moment(selected_dt, 'DD.MM.YYYY');
+        m_s_dt.add(1, 'months');
+        selected_dt = m_s_dt.format('DD.MM.YYYY');
+        $("#dt").val(selected_dt);
+        setDtAndReload();
+
+    }
+
+    function setPrevMonth()
+    {
+        var m_s_dt = moment(selected_dt, 'DD.MM.YYYY');
+        m_s_dt.add(-1, 'months');
+        selected_dt = m_s_dt.format('DD.MM.YYYY');
+        $("#dt").val(selected_dt);
+        setDtAndReload();
+    }
+
+</script>
+<table class="dynamictable stripped text-center"><caption>Sondy</caption><thead><tr><th scope="col">Číslo stanice</th>
+          <th scope="col">Názov lokality</th>
+          <th scope="col">Povodie</th>
+          <th scope="col">Hĺbka vrtu [m]</th>
+          <th scope="col">Nadmorská výška terénu [m]</th>
+          <th scope="col">Dátum a čas merania</th>
+          <th scope="col">Úroveň podzemnej vody<br>[m n.m.]</th>
+          <th scope="col">Foto stanice</th></tr></thead><tbody><tr><td>5</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Kopčany" href="?page=1&amp;id=pzv_kvantita&amp;s_id=2">Kopčany</a></td><td class="text-left">Morava</td><td>8.08</td><td>163.88</td><td>28.10.2026 22:00</td><td>160.09</td><td><a href="/Image/katalog/pzv/img/1513759675_5_kopcany.jpg" data-fancybox title="Zobraziť fotografiu stanice Kopčany" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>8</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Reca" href="?page=1&amp;id=pzv_kvantita&amp;s_id=166">Reca</a></td><td class="text-left">Váh</td><td>11.01</td><td>122.84</td><td>28.10.2026 18:00</td><td>119.39</td><td>-</td></tr><tr><td>68</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Bratislava - Devínska Nová Ves" href="?page=1&amp;id=pzv_kvantita&amp;s_id=168">Bratislava - Devínska Nová Ves</a></td><td class="text-left">Morava</td><td>16.33</td><td>156.21</td><td>28.10.2026 18:00</td><td>153.01</td><td>-</td></tr><tr><td>76</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Lakšárska Nová Ves" href="?page=1&amp;id=pzv_kvantita&amp;s_id=120">Lakšárska Nová Ves</a></td><td class="text-left">Morava</td><td>46.27</td><td>219.79</td><td>28.10.2026 06:00</td><td>205.33</td><td><a href="/Image/katalog/pzv/img/1620800555_76.jpg" data-fancybox title="Zobraziť fotografiu stanice Lakšárska Nová Ves" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>86</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Malacky" href="?page=1&amp;id=pzv_kvantita&amp;s_id=121">Malacky</a></td><td class="text-left">Morava</td><td>16.64</td><td>184.6</td><td>28.10.2026 18:00</td><td>179.54</td><td><a href="/Image/katalog/pzv/img/1620302279_86_malacky.jpg" data-fancybox title="Zobraziť fotografiu stanice Malacky" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>185</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Považany" href="?page=1&amp;id=pzv_kvantita&amp;s_id=122">Považany</a></td><td class="text-left">Váh</td><td>21.49</td><td>175.55</td><td>28.10.2026 18:00</td><td>170.73</td><td><a href="/Image/katalog/pzv/img/1620302466_185.jpg" data-fancybox title="Zobraziť fotografiu stanice Považany" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>254</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Opatovce nad Nitrou" href="?page=1&amp;id=pzv_kvantita&amp;s_id=123">Opatovce nad Nitrou</a></td><td class="text-left">Váh</td><td>11</td><td>256.59</td><td>28.10.2026 18:00</td><td>253.58</td><td><a href="/Image/katalog/pzv/img/1620302617_254.jpg" data-fancybox title="Zobraziť fotografiu stanice Opatovce nad Nitrou" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>256</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Nováky - Sever" href="?page=1&amp;id=pzv_kvantita&amp;s_id=124">Nováky - Sever</a></td><td class="text-left">Váh</td><td>9.8</td><td>246.26</td><td>28.10.2026 18:00</td><td>241.21</td><td><a href="/Image/katalog/pzv/img/1620302807_256.jpg" data-fancybox title="Zobraziť fotografiu stanice Nováky - Sever" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>273</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Veľké Chlievany" href="?page=1&amp;id=pzv_kvantita&amp;s_id=125">Veľké Chlievany</a></td><td class="text-left">Váh</td><td>11.04</td><td>195.35</td><td>28.10.2026 06:00</td><td>193.09</td><td><a href="/Image/katalog/pzv/img/1620801096_273.jpg" data-fancybox title="Zobraziť fotografiu stanice Veľké Chlievany" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>280</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Bošany" href="?page=1&amp;id=pzv_kvantita&amp;s_id=126">Bošany</a></td><td class="text-left">Váh</td><td>12.16</td><td>172.85</td><td>28.10.2026 18:00</td><td>168.92</td><td><a href="/Image/katalog/pzv/img/1621228856_280_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Bošany" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>346</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Vavrišovo" href="?page=1&amp;id=pzv_kvantita&amp;s_id=8">Vavrišovo</a></td><td class="text-left">Váh</td><td>10.6</td><td>721.47</td><td>28.10.2026 22:00</td><td>719.87</td><td><a href="/Image/katalog/pzv/img/1620801437_346_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Vavrišovo" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>355</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Vieska nad Žitavou" href="?page=1&amp;id=pzv_kvantita&amp;s_id=127">Vieska nad Žitavou</a></td><td class="text-left">Váh</td><td>7.1</td><td>158.01</td><td>28.10.2026 18:00</td><td>155.72</td><td><a href="/Image/katalog/pzv/img/1620801583_355_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Vieska nad Žitavou" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>369</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Selice" href="?page=1&amp;id=pzv_kvantita&amp;s_id=129">Selice</a></td><td class="text-left">Váh</td><td>14.06</td><td>112.82</td><td>28.10.2026 18:00</td><td>108.74</td><td><a href="/Image/katalog/pzv/img/1620303966_369.jpg" data-fancybox title="Zobraziť fotografiu stanice Selice" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>375</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Dvory nad Žitavou" href="?page=1&amp;id=pzv_kvantita&amp;s_id=130">Dvory nad Žitavou</a></td><td class="text-left">Váh</td><td>8.01</td><td>117.18</td><td>28.10.2026 18:00</td><td>114.87</td><td><a href="/Image/katalog/pzv/img/1620801788_375_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Dvory nad Žitavou" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>377</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Nové Zámky - Sever" href="?page=1&amp;id=pzv_kvantita&amp;s_id=131">Nové Zámky - Sever</a></td><td class="text-left">Váh</td><td>11.06</td><td>118.17</td><td>28.10.2026 18:00</td><td>112.46</td><td>-</td></tr><tr><td>413</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Kysucké Nové Mesto" href="?page=1&amp;id=pzv_kvantita&amp;s_id=10">Kysucké Nové Mesto</a></td><td class="text-left">Váh</td><td>12.59</td><td>354.72</td><td>28.10.2026 22:00</td><td>347.85</td><td><a href="/Image/katalog/pzv/img/1513760015_413_kysucke_nove_mesto.jpg" data-fancybox title="Zobraziť fotografiu stanice Kysucké Nové Mesto" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>432</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Dolný Kubín - Geceľ" href="?page=1&amp;id=pzv_kvantita&amp;s_id=104">Dolný Kubín - Geceľ</a></td><td class="text-left">Váh</td><td>11.65</td><td>468.7</td><td>28.10.2026 18:00</td><td>464.69</td><td><a href="/Image/katalog/pzv/img/1624870103_432_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Dolný Kubín - Geceľ" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>466</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Ivančiná" href="?page=1&amp;id=pzv_kvantita&amp;s_id=11">Ivančiná</a></td><td class="text-left">Váh</td><td>7.7</td><td>453.79</td><td>28.10.2026 22:00</td><td>449.89</td><td><a href="/Image/katalog/pzv/img/1620801992_466_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Ivančiná" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>467</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Blažovce" href="?page=1&amp;id=pzv_kvantita&amp;s_id=105">Blažovce</a></td><td class="text-left">Váh</td><td>13.25</td><td>442.56</td><td>28.10.2026 18:00</td><td>441.65</td><td><a href="/Image/katalog/pzv/img/1620802384_467_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Blažovce" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>548</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Medvecké" href="?page=1&amp;id=pzv_kvantita&amp;s_id=88">Medvecké</a></td><td class="text-left">Hron</td><td>18.4</td><td>163.4</td><td>28.10.2026 18:00</td><td>154.94</td><td><a href="/Image/katalog/pzv/img/1620802661_548_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Medvecké" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>552</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Ondrejovce" href="?page=1&amp;id=pzv_kvantita&amp;s_id=89">Ondrejovce</a></td><td class="text-left">Hron</td><td>14.9</td><td>162.38</td><td>28.10.2026 18:00</td><td>154.72</td><td><a href="/Image/katalog/pzv/img/1620802769_552_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Ondrejovce" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>564</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Čata - Východ" href="?page=1&amp;id=pzv_kvantita&amp;s_id=85">Čata - Východ</a></td><td class="text-left">Hron</td><td>10.91</td><td>121.5</td><td>28.10.2026 18:00</td><td>117.81</td><td><a href="/Image/katalog/pzv/img/1620802887_564_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Čata - Východ" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>566</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Hotianska Vrbica" href="?page=1&amp;id=pzv_kvantita&amp;s_id=83">Hotianska Vrbica</a></td><td class="text-left">Hron</td><td>9.5</td><td>142.56</td><td>28.10.2026 18:00</td><td>140.42</td><td>-</td></tr><tr><td>569</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Šalov - Hron" href="?page=1&amp;id=pzv_kvantita&amp;s_id=12">Šalov - Hron</a></td><td class="text-left">Hron</td><td>10.91</td><td>126.72</td><td>28.10.2026 22:00</td><td>124.01</td><td><a href="/Image/katalog/pzv/img/1620803091_569_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Šalov - Hron" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>575</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Sykenica - Trhyňa" href="?page=1&amp;id=pzv_kvantita&amp;s_id=84">Sykenica - Trhyňa</a></td><td class="text-left">Hron</td><td>9.91</td><td>133.73</td><td>28.10.2026 18:00</td><td>131.43</td><td><a href="/Image/katalog/pzv/img/1620803518_575_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Sykenica - Trhyňa" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>583</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Mýtne Ludany - Východ" href="?page=1&amp;id=pzv_kvantita&amp;s_id=82">Mýtne Ludany - Východ</a></td><td class="text-left">Hron</td><td>11.41</td><td>149.68</td><td>28.10.2026 18:00</td><td>145.66</td><td><a href="/Image/katalog/pzv/img/1620803578_583_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Mýtne Ludany - Východ" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>586</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Horná Seč" href="?page=1&amp;id=pzv_kvantita&amp;s_id=90">Horná Seč</a></td><td class="text-left">Hron</td><td>12.5</td><td>158.03</td><td>28.10.2026 18:00</td><td>153.61</td><td><a href="/Image/katalog/pzv/img/1621424991_586_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Horná Seč" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>589</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Nový Tekov" href="?page=1&amp;id=pzv_kvantita&amp;s_id=91">Nový Tekov</a></td><td class="text-left">Hron</td><td>17.9</td><td>168.61</td><td>28.10.2026 18:00</td><td>161.68</td><td><a href="/Image/katalog/pzv/img/1620803917_589_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Nový Tekov" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>597</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Veľké Kozmálovce" href="?page=1&amp;id=pzv_kvantita&amp;s_id=92">Veľké Kozmálovce</a></td><td class="text-left">Hron</td><td>13.92</td><td>172.4</td><td>28.10.2026 18:00</td><td>168.13</td><td><a href="/Image/katalog/pzv/img/1620804257_597_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Veľké Kozmálovce" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>606</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Hadovce " href="?page=1&amp;id=pzv_kvantita&amp;s_id=14">Hadovce </a></td><td class="text-left">Váh</td><td>10.03</td><td>108.63</td><td>28.10.2026 22:00</td><td>105.45</td><td><a href="/Image/katalog/pzv/img/1513760021_606_hadovce.jpg" data-fancybox title="Zobraziť fotografiu stanice Hadovce " class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>618</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Zemianska Olča" href="?page=1&amp;id=pzv_kvantita&amp;s_id=15">Zemianska Olča</a></td><td class="text-left">Váh</td><td>9.2</td><td>109.69</td><td>28.10.2026 18:00</td><td>107.08</td><td><a href="/Image/katalog/pzv/img/1620804495_618_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Zemianska Olča" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>672</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Veľké Blahovo - Lúky" href="?page=1&amp;id=pzv_kvantita&amp;s_id=132">Veľké Blahovo - Lúky</a></td><td class="text-left">Váh</td><td>11.55</td><td>115.89</td><td>28.10.2026 18:00</td><td>113.14</td><td><a href="/Image/katalog/pzv/img/1620804664_672_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Veľké Blahovo - Lúky" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>753</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Zvolen" href="?page=1&amp;id=pzv_kvantita&amp;s_id=96">Zvolen</a></td><td class="text-left">Hron</td><td>11.08</td><td>292.15</td><td>28.10.2026 18:00</td><td>285.85</td><td><a href="/Image/katalog/pzv/img/1621425665_753_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Zvolen" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>765</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Hliník nad Hronom" href="?page=1&amp;id=pzv_kvantita&amp;s_id=95">Hliník nad Hronom</a></td><td class="text-left">Hron</td><td>10.53</td><td>228.31</td><td>28.10.2026 18:00</td><td>226.14</td><td><a href="/Image/katalog/pzv/img/1620809079_765_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Hliník nad Hronom" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>774</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Žarnovica" href="?page=1&amp;id=pzv_kvantita&amp;s_id=94">Žarnovica</a></td><td class="text-left">Hron</td><td>10.48</td><td>227.29</td><td>28.10.2026 18:00</td><td>221.41</td><td><a href="/Image/katalog/pzv/img/1621426104_774_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Žarnovica" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>784</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Tekovská Breznica" href="?page=1&amp;id=pzv_kvantita&amp;s_id=16">Tekovská Breznica</a></td><td class="text-left">Hron</td><td>6.97</td><td>189.09</td><td>28.10.2026 18:00</td><td>186.54</td><td><a href="/Image/katalog/pzv/img/1619004363_784.jpg" data-fancybox title="Zobraziť fotografiu stanice Tekovská Breznica" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>788</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Kozárovce - Pri kostole" href="?page=1&amp;id=pzv_kvantita&amp;s_id=93">Kozárovce - Pri kostole</a></td><td class="text-left">Hron</td><td>11.91</td><td>184.18</td><td>28.10.2026 18:00</td><td>179.26</td><td><a href="/Image/katalog/pzv/img/1620809642_788_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Kozárovce - Pri kostole" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>797</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Bratislava - Rusovce - hranica" href="?page=1&amp;id=pzv_kvantita&amp;s_id=169">Bratislava - Rusovce - hranica</a></td><td class="text-left">Dunaj</td><td>16.69</td><td>133.47</td><td>28.10.2026 22:00</td><td>127.22</td><td>-</td></tr><tr><td>814</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Slovenské Ďarmoty" href="?page=1&amp;id=pzv_kvantita&amp;s_id=17">Slovenské Ďarmoty</a></td><td class="text-left">Ipeľ</td><td>10.3</td><td>141.77</td><td>28.10.2026 22:00</td><td>137.98</td><td><a href="/Image/katalog/pzv/img/1620810144_814_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Slovenské Ďarmoty" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>817</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Ipeľský Sokolec" href="?page=1&amp;id=pzv_kvantita&amp;s_id=103">Ipeľský Sokolec</a></td><td class="text-left">Ipeľ</td><td>8.91</td><td>116.89</td><td>28.10.2026 18:00</td><td>114.9</td><td>-</td></tr><tr><td>821</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Malá Čalomija" href="?page=1&amp;id=pzv_kvantita&amp;s_id=87">Malá Čalomija</a></td><td class="text-left">Ipeľ</td><td>9.68</td><td>135.97</td><td>28.10.2026 18:00</td><td>133.14</td><td><a href="/Image/katalog/pzv/img/1620810364_821_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Malá Čalomija" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>823</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Malá Čalomija" href="?page=1&amp;id=pzv_kvantita&amp;s_id=86">Malá Čalomija</a></td><td class="text-left">Ipeľ</td><td>10.16</td><td>136.21</td><td>28.10.2026 18:00</td><td>133.28</td><td><a href="/Image/katalog/pzv/img/1621924645_823_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Malá Čalomija" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>835</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Bušince" href="?page=1&amp;id=pzv_kvantita&amp;s_id=98">Bušince</a></td><td class="text-left">Ipeľ</td><td>7.5</td><td>155.69</td><td>28.10.2026 18:00</td><td>152.85</td><td><a href="/Image/katalog/pzv/img/1621926806_835_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Bušince" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>850</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Holiša" href="?page=1&amp;id=pzv_kvantita&amp;s_id=60">Holiša</a></td><td class="text-left">Ipeľ</td><td>6.1</td><td>175.66</td><td>28.10.2026 18:00</td><td>172.93</td><td><a href="/Image/katalog/pzv/img/1621925061_850_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Holiša" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>877</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Zolná" href="?page=1&amp;id=pzv_kvantita&amp;s_id=97">Zolná</a></td><td class="text-left">Hron</td><td>8.05</td><td>332.69</td><td>28.10.2026 22:00</td><td>330.5</td><td><a href="/Image/katalog/pzv/img/1621426330_877_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Zolná" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>888</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Banská Bystrica - Majer" href="?page=1&amp;id=pzv_kvantita&amp;s_id=18">Banská Bystrica - Majer</a></td><td class="text-left">Hron</td><td>6.8</td><td>348.81</td><td>28.10.2026 22:00</td><td>346.12</td><td><a href="/Image/katalog/pzv/img/1620811114_888_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Banská Bystrica - Majer" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>896</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Brezno" href="?page=1&amp;id=pzv_kvantita&amp;s_id=19">Brezno</a></td><td class="text-left">Hron</td><td>9.88</td><td>490.36</td><td>28.10.2026 22:00</td><td>487.57</td><td><a href="/Image/katalog/pzv/img/1524221805_896_brezno.jpg" data-fancybox title="Zobraziť fotografiu stanice Brezno" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>898</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Polomka - Hámor" href="?page=1&amp;id=pzv_kvantita&amp;s_id=99">Polomka - Hámor</a></td><td class="text-left">Hron</td><td>8.89</td><td>599.64</td><td>28.10.2026 18:00</td><td>598.17</td><td><a href="/Image/katalog/pzv/img/1620811275_898_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Polomka - Hámor" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>903</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Betliar" href="?page=1&amp;id=pzv_kvantita&amp;s_id=101">Betliar</a></td><td class="text-left">Slaná</td><td>6.8</td><td>314.85</td><td>28.10.2026 18:00</td><td>312.79</td><td>-</td></tr><tr><td>904</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Rožňava" href="?page=1&amp;id=pzv_kvantita&amp;s_id=47">Rožňava</a></td><td class="text-left">Slaná</td><td>5</td><td>270.63</td><td>28.10.2026 18:00</td><td>268.42</td><td><a href="/Image/katalog/pzv/img/1620811508_904_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Rožňava" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>910</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Čoltovo" href="?page=1&amp;id=pzv_kvantita&amp;s_id=20">Čoltovo</a></td><td class="text-left">Slaná</td><td>9.57</td><td>194.65</td><td>28.10.2026 22:00</td><td>192.63</td><td><a href="/Image/katalog/pzv/img/1620811662_910_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Čoltovo" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>914</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Včelince" href="?page=1&amp;id=pzv_kvantita&amp;s_id=21">Včelince</a></td><td class="text-left">Slaná</td><td>7.8</td><td>167.5</td><td>28.10.2026 22:00</td><td>163.42</td><td><a href="/Image/katalog/pzv/img/1620811803_914_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Včelince" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>937</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Revúca" href="?page=1&amp;id=pzv_kvantita&amp;s_id=100">Revúca</a></td><td class="text-left">Slaná</td><td>11.06</td><td>318.73</td><td>28.10.2026 18:00</td><td>315.85</td><td><a href="/Image/katalog/pzv/img/1620812424_937_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Revúca" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>955</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Jesenské" href="?page=1&amp;id=pzv_kvantita&amp;s_id=62">Jesenské</a></td><td class="text-left">Slaná</td><td>5.3</td><td>181.09</td><td>28.10.2026 18:00</td><td>179.23</td><td><a href="/Image/katalog/pzv/img/1620815689_955_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Jesenské" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>969</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Skerešovo" href="?page=1&amp;id=pzv_kvantita&amp;s_id=64">Skerešovo</a></td><td class="text-left">Slaná</td><td>12.11</td><td>216.08</td><td>28.10.2026 18:00</td><td>214.08</td><td>-</td></tr><tr><td>978</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Bušovce" href="?page=1&amp;id=pzv_kvantita&amp;s_id=22">Bušovce</a></td><td class="text-left">Dunajec a Poprad</td><td>10.48</td><td>592.03</td><td>28.10.2026 22:00</td><td>587.57</td><td><a href="/Image/katalog/pzv/img/1620815826_978_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Bušovce" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>989</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Forbasy" href="?page=1&amp;id=pzv_kvantita&amp;s_id=139">Forbasy</a></td><td class="text-left">Dunajec a Poprad</td><td>14.23</td><td>542.62</td><td>28.10.2026 18:00</td><td>536.39</td><td><a href="/Image/katalog/pzv/img/1620815960_989_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Forbasy" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1041</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Budimír" href="?page=1&amp;id=pzv_kvantita&amp;s_id=140">Budimír</a></td><td class="text-left">Hornád</td><td>13.14</td><td>199.31</td><td>28.10.2026 18:00</td><td>196.34</td><td><a href="/Image/katalog/pzv/img/1620816091_1041_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Budimír" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1069</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Krivany" href="?page=1&amp;id=pzv_kvantita&amp;s_id=141">Krivany</a></td><td class="text-left">Hornád</td><td>15.37</td><td>412.23</td><td>28.10.2026 18:00</td><td>407.43</td><td><a href="/Image/katalog/pzv/img/1620816478_1069_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Krivany" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1079</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Trstené pri Hornáde" href="?page=1&amp;id=pzv_kvantita&amp;s_id=142">Trstené pri Hornáde</a></td><td class="text-left">Hornád</td><td>12.01</td><td>168.44</td><td>28.10.2026 18:00</td><td>165.59</td><td><a href="/Image/katalog/pzv/img/1620816671_1079_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Trstené pri Hornáde" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1090</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Medzev" href="?page=1&amp;id=pzv_kvantita&amp;s_id=143">Medzev</a></td><td class="text-left">Bodva</td><td>10.13</td><td>293.44</td><td>28.10.2026 18:00</td><td>291.3</td><td><a href="/Image/katalog/pzv/img/1620816829_1090_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Medzev" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1101</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Nálepkovo" href="?page=1&amp;id=pzv_kvantita&amp;s_id=144">Nálepkovo</a></td><td class="text-left">Hornád</td><td>10.28</td><td>503.11</td><td>28.10.2026 18:00</td><td>501.67</td><td><a href="/Image/katalog/pzv/img/1620817065_1101.jpg" data-fancybox title="Zobraziť fotografiu stanice Nálepkovo" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1111</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Veľký Šariš" href="?page=1&amp;id=pzv_kvantita&amp;s_id=145">Veľký Šariš</a></td><td class="text-left">Hornád</td><td>8.52</td><td>262.05</td><td>28.10.2026 18:00</td><td>259.61</td><td><a href="/Image/katalog/pzv/img/1620817261_1111_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Veľký Šariš" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1138</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Vyšné Čabiny - Krásny Brod" href="?page=1&amp;id=pzv_kvantita&amp;s_id=147">Vyšné Čabiny - Krásny Brod</a></td><td class="text-left">Bodrog</td><td>14.03</td><td>281.43</td><td>28.10.2026 18:00</td><td>275.67</td><td><a href="/Image/katalog/pzv/img/1620817767_1138_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Vyšné Čabiny - Krásny Brod" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1156</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Vranov nad Topľou - Hencovce" href="?page=1&amp;id=pzv_kvantita&amp;s_id=148">Vranov nad Topľou - Hencovce</a></td><td class="text-left">Bodrog</td><td>13.29</td><td>120.38</td><td>28.10.2026 18:00</td><td>115.57</td><td><a href="/Image/katalog/pzv/img/1620817934_1156_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Vranov nad Topľou - Hencovce" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1160</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Parchovany" href="?page=1&amp;id=pzv_kvantita&amp;s_id=149">Parchovany</a></td><td class="text-left">Bodrog</td><td>15</td><td>114.74</td><td>28.10.2026 18:00</td><td>108.12</td><td><a href="/Image/katalog/pzv/img/1620818085_1160_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Parchovany" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1183</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Voľa - Stankovce" href="?page=1&amp;id=pzv_kvantita&amp;s_id=24">Voľa - Stankovce</a></td><td class="text-left">Bodrog</td><td>9.26</td><td>126.71</td><td>28.10.2026 18:00</td><td>122.37</td><td><a href="/Image/katalog/pzv/img/1620818285_1183_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Voľa - Stankovce" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1199</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Budkovce" href="?page=1&amp;id=pzv_kvantita&amp;s_id=150">Budkovce</a></td><td class="text-left">Bodrog</td><td>13.28</td><td>101.99</td><td>28.10.2026 18:00</td><td>99.38</td><td><a href="/Image/katalog/pzv/img/1621404632_1199_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Budkovce" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1238</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Stretávka" href="?page=1&amp;id=pzv_kvantita&amp;s_id=151">Stretávka</a></td><td class="text-left">Bodrog</td><td>35.12</td><td>102.99</td><td>28.10.2026 18:00</td><td>98.5</td><td><a href="/Image/katalog/pzv/img/1623831407_1238_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Stretávka" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1247</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Blatné Revištia" href="?page=1&amp;id=pzv_kvantita&amp;s_id=152">Blatné Revištia</a></td><td class="text-left">Bodrog</td><td>16.75</td><td>104.57</td><td>28.10.2026 18:00</td><td>101.54</td><td><a href="/Image/katalog/pzv/img/1620818919_1247_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Blatné Revištia" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1270</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Trebišov - Cukrovar" href="?page=1&amp;id=pzv_kvantita&amp;s_id=154">Trebišov - Cukrovar</a></td><td class="text-left">Bodrog</td><td>14.04</td><td>106.33</td><td>28.10.2026 18:00</td><td>103.2</td><td><a href="/Image/katalog/pzv/img/1620819452_1270_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Trebišov - Cukrovar" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1313</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Dubinné" href="?page=1&amp;id=pzv_kvantita&amp;s_id=155">Dubinné</a></td><td class="text-left">Bodrog</td><td>11.51</td><td>218.95</td><td>28.10.2026 18:00</td><td>212.43</td><td><a href="/Image/katalog/pzv/img/1621404965_1313_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Dubinné" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1337</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Tibava" href="?page=1&amp;id=pzv_kvantita&amp;s_id=156">Tibava</a></td><td class="text-left">Bodrog</td><td>15.14</td><td>121.61</td><td>28.10.2026 18:00</td><td>118.65</td><td><a href="/Image/katalog/pzv/img/1620820265_1337_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Tibava" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1339</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Čičarovce" href="?page=1&amp;id=pzv_kvantita&amp;s_id=65">Čičarovce</a></td><td class="text-left">Bodrog</td><td>25.2</td><td>101.46</td><td>28.10.2026 18:00</td><td>96.26</td><td><a href="/Image/katalog/pzv/img/1580388478_1339_cicarovce.jpg" data-fancybox title="Zobraziť fotografiu stanice Čičarovce" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1344</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Michaľany" href="?page=1&amp;id=pzv_kvantita&amp;s_id=157">Michaľany</a></td><td class="text-left">Bodrog</td><td>12.16</td><td>125.58</td><td>28.10.2026 18:00</td><td>122.97</td><td><a href="/Image/katalog/pzv/img/1624870340_1344_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Michaľany" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1347</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Miňovce" href="?page=1&amp;id=pzv_kvantita&amp;s_id=158">Miňovce</a></td><td class="text-left">Bodrog</td><td>8.51</td><td>167.7</td><td>28.10.2026 18:00</td><td>164.04</td><td><a href="/Image/katalog/pzv/img/1621405376_1347_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Miňovce" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1350</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Koškovce" href="?page=1&amp;id=pzv_kvantita&amp;s_id=159">Koškovce</a></td><td class="text-left">Bodrog</td><td>9.05</td><td>184.22</td><td>28.10.2026 18:00</td><td>180.62</td><td><a href="/Image/katalog/pzv/img/1620820474_1350_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Koškovce" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>2125</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Trstice" href="?page=1&amp;id=pzv_kvantita&amp;s_id=41">Trstice</a></td><td class="text-left">Váh</td><td>11.23</td><td>112.46</td><td>28.10.2026 18:00</td><td>108.89</td><td><a href="/Image/katalog/pzv/img/1513760035_2125_trstice.jpg" data-fancybox title="Zobraziť fotografiu stanice Trstice" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>2776</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Žarnovica" href="?page=1&amp;id=pzv_kvantita&amp;s_id=66">Žarnovica</a></td><td class="text-left">Hron</td><td>6.62</td><td>210.27</td><td>28.10.2026 22:00</td><td>208.47</td><td><a href="/Image/katalog/pzv/img/1621424669_2776_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Žarnovica" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>2808</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Tupá" href="?page=1&amp;id=pzv_kvantita&amp;s_id=81">Tupá</a></td><td class="text-left">Ipeľ</td><td>11.91</td><td>125.98</td><td>28.10.2026 18:00</td><td>123.81</td><td><a href="/Image/katalog/pzv/img/1620820884_2808_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Tupá" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>2870</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Chľaba" href="?page=1&amp;id=pzv_kvantita&amp;s_id=59">Chľaba</a></td><td class="text-left">Dunaj</td><td>9.71</td><td>106.31</td><td>28.10.2026 18:00</td><td>100.41</td><td><a href="/Image/katalog/pzv/img/1621251885_2870_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Chľaba" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>2915</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Rumince" href="?page=1&amp;id=pzv_kvantita&amp;s_id=48">Rumince</a></td><td class="text-left">Slaná</td><td>13.02</td><td>166.2</td><td>28.10.2026 18:00</td><td>162.06</td><td><a href="/Image/katalog/pzv/img/1578574050_2915_ruminice.jpg" data-fancybox title="Zobraziť fotografiu stanice Rumince" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>3024</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Valaliky - Buzice" href="?page=1&amp;id=pzv_kvantita&amp;s_id=44">Valaliky - Buzice</a></td><td class="text-left">Hornád</td><td>11.36</td><td>185.05</td><td>28.10.2026 18:00</td><td>181.28</td><td>-</td></tr><tr><td>3087</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Žarnov" href="?page=1&amp;id=pzv_kvantita&amp;s_id=45">Žarnov</a></td><td class="text-left">Bodva</td><td>9.82</td><td>176.77</td><td>28.10.2026 18:00</td><td>175.04</td><td>-</td></tr><tr><td>5365</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Liptovský Ján M-65" href="?page=1&amp;id=pzv_kvantita&amp;s_id=106">Liptovský Ján M-65</a></td><td class="text-left">Váh</td><td>98.14</td><td>725.86</td><td>28.10.2026 18:00</td><td>725.2</td><td><a href="/Image/katalog/pzv/img/1624873418_5365_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Liptovský Ján M-65" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>5369</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Hybe M-69" href="?page=1&amp;id=pzv_kvantita&amp;s_id=167">Hybe M-69</a></td><td class="text-left">Váh</td><td>164.56</td><td>670.34</td><td>28.10.2026 22:00</td><td>664.3</td><td>-</td></tr><tr><td>5382</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Lučatín M-82" href="?page=1&amp;id=pzv_kvantita&amp;s_id=102">Lučatín M-82</a></td><td class="text-left">Hron</td><td>162.04</td><td>390.37</td><td>28.10.2026 18:00</td><td>378.01</td><td>-</td></tr><tr><td>7326</td><td class="text-left"><a class="d-block" title="Zobraziť detailné záznamy o stanici Bodíky" href="?page=1&amp;id=pzv_kvantita&amp;s_id=133">Bodíky</a></td><td class="text-left">Dunaj</td><td>16.75</td><td>117.9</td><td>28.10.2026 18:00</td><td>114.95</td><td><a href="/Image/katalog/pzv/img/1620821398_7326_s.jpg" data-fancybox title="Zobraziť fotografiu stanice Bodíky" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr></tbody></table><table class="dynamictable stripped text-center"><caption>Pramene</caption><thead class="text-center"><tr><th>Číslo stanice</th>
+          <th scope="col">Názov lokality</th>
+          <th scope="col">Názov prameňa</th>
+          <th scope="col">Povodie</th>
+          <th scope="col">Nadmorská výška objektu [m]</th>
+          <th scope="col">Dátum a čas merania</th>
+          <th scope="col">Výdatnosť prameňa<br>[l.s<sup>-1</sup>]</th>
+          <th scope="col">Foto stanice</th></tr></thead><tbody><tr><td>310</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Svarín"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=68">Svarín</a></td><td class="text-left">Nižný Chmelienec</td><td>Váh</td><td>707</td><td>28.10.2026 22:00</td><td>74.63</td><td><a href="/Image/katalog/pzv/img/1620883055_310_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Svarín" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>320</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Pribylina"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=110">Pribylina</a></td><td class="text-left">Surový hrádok č.1</td><td>Váh</td><td>926</td><td>28.10.2026 18:00</td><td>28.1</td><td>-</td></tr><tr><td>322</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Pribylina"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=111">Pribylina</a></td><td class="text-left">Pleso</td><td>Váh</td><td>888</td><td>28.10.2026 18:00</td><td>17.91</td><td>-</td></tr><tr><td>352</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Liptovský Ján"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=113">Liptovský Ján</a></td><td class="text-left">Pri Stanišovskej jaskyni 1</td><td>Váh</td><td>727</td><td>28.10.2026 18:00</td><td>1.513</td><td><a href="/Image/katalog/pzv/img/1620883594_352_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Liptovský Ján" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>364</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Žiar"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=76">Žiar</a></td><td class="text-left">Medzivŕšky</td><td>Váh</td><td>870</td><td>28.10.2026 22:00</td><td>4.976</td><td><a href="/Image/katalog/pzv/img/1620883853_364_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Žiar" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>365</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Huty"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=114">Huty</a></td><td class="text-left">Kvačianska Dolina 1</td><td>Váh</td><td>764</td><td>28.10.2026 18:00</td><td>4.951</td><td><a href="/Image/katalog/pzv/img/1620884017_365_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Huty" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>373</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Liptovské Matiašovce"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=9">Liptovské Matiašovce</a></td><td class="text-left">Suchý potok č.7</td><td>Váh</td><td>700</td><td>28.10.2026 18:00</td><td>4.169</td><td><a href="/Image/katalog/pzv/img/1620884155_373_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Liptovské Matiašovce" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>402</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Demänová"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=75">Demänová</a></td><td class="text-left">Zadná voda</td><td>Váh</td><td>1190</td><td>28.10.2026 18:00</td><td>9.068</td><td><a href="/Image/katalog/pzv/img/1619006556_402.jpg" data-fancybox title="Zobraziť fotografiu stanice Demänová" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>501</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Vitanová - Oravice"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=71">Vitanová - Oravice</a></td><td class="text-left">Tichá Dolina 1</td><td>Váh</td><td>875</td><td>28.10.2026 22:00</td><td>97.92</td><td><a href="/Image/katalog/pzv/img/1620884334_501_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Vitanová - Oravice" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>536</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Zuberec"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=72">Zuberec</a></td><td class="text-left">Teplica</td><td>Váh</td><td>1028</td><td>28.10.2026 18:00</td><td>18.95</td><td><a href="/Image/katalog/pzv/img/1624875105_536_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Zuberec" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>613</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Čremošné"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=115">Čremošné</a></td><td class="text-left">Výver z tunela</td><td>Váh</td><td>720</td><td>28.10.2026 18:00</td><td>8.92</td><td><a href="/Image/katalog/pzv/img/1624875310_613_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Čremošné" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>630</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Vrícko"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=116">Vrícko</a></td><td class="text-left">Vrícko 2</td><td>Váh</td><td>563</td><td>28.09.2026 07:00</td><td>8.392</td><td><a href="/Image/katalog/pzv/img/1620884729_630_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Vrícko" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>646</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Valča"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=117">Valča</a></td><td class="text-left">Valčianska Dolina 2</td><td>Váh</td><td>571</td><td>28.10.2026 22:00</td><td>2.481</td><td><a href="/Image/katalog/pzv/img/1620884875_646_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Valča" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>757</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Čadca"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=73">Čadca</a></td><td class="text-left">U Šimčiska</td><td>Váh</td><td>630</td><td>28.10.2026 22:00</td><td>0.067</td><td><a href="/Image/katalog/pzv/img/1620885009_757_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Čadca" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>760</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Belá - Kubiková"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=119">Belá - Kubiková</a></td><td class="text-left">Veľhora</td><td>Váh</td><td>717</td><td>28.10.2026 22:00</td><td>-536871</td><td><a href="/Image/katalog/pzv/img/1620885199_760_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Belá - Kubiková" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>778</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Rajecká Lesná"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=161">Rajecká Lesná</a></td><td class="text-left">Sucie</td><td>Váh</td><td>714</td><td>27.10.2026 06:00</td><td>4.278</td><td>-</td></tr><tr><td>876</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Pružina"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=118">Pružina</a></td><td class="text-left">Bobot</td><td>Váh</td><td>420</td><td>28.10.2026 18:00</td><td>5.229</td><td><a href="/Image/katalog/pzv/img/1620885358_876_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Pružina" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1096</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Krásna Ves"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=135">Krásna Ves</a></td><td class="text-left">Horný prameň</td><td>Váh</td><td>280</td><td>28.10.2026 18:00</td><td>0.411</td><td>-</td></tr><tr><td>1201</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Telgárt"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=25">Telgárt</a></td><td class="text-left">Hron</td><td>Hron</td><td>935</td><td>28.10.2026 18:00</td><td>2.175</td><td><a href="/Image/katalog/pzv/img/1620885710_1201_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Telgárt" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1266</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Molča"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=77">Molča</a></td><td class="text-left">Teplica</td><td>Hron</td><td>455</td><td>28.10.2026 18:00</td><td>1.397</td><td><a href="/Image/katalog/pzv/img/1620885992_1266_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Molča" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1291</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Kordíky"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=29">Kordíky</a></td><td class="text-left">Pod širokou</td><td>Hron</td><td>898</td><td>28.10.2026 18:00</td><td>0.699</td><td><a href="/Image/katalog/pzv/img/1533285332_1291_kordiky_pramen.jpg" data-fancybox title="Zobraziť fotografiu stanice Kordíky" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1305</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Nemecká"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=31">Nemecká</a></td><td class="text-left">Pod motorestom</td><td>Hron</td><td>415</td><td>28.10.2026 18:00</td><td>5.076</td><td><a href="/Image/katalog/pzv/img/1621931353_1305_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Nemecká" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1312</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Dolná Lehota"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=33">Dolná Lehota</a></td><td class="text-left">Vrabec</td><td>Hron</td><td>568</td><td>28.10.2026 18:00</td><td>29.96</td><td><a href="/Image/katalog/pzv/img/1620886184_1312_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Dolná Lehota" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1315</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Dolná Lehota"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=78">Dolná Lehota</a></td><td class="text-left">Dolný prameň</td><td>Hron</td><td>533</td><td>28.10.2026 18:00</td><td>12.99</td><td><a href="/Image/katalog/pzv/img/1624875727_1315_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Dolná Lehota" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1508</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Radzovce"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=34">Radzovce</a></td><td class="text-left">Obručná</td><td>Ipeľ</td><td>480</td><td>28.10.2026 18:00</td><td>1.634</td><td><a href="/Image/katalog/pzv/img/1580463731_1508_radzovce.jpg" data-fancybox title="Zobraziť fotografiu stanice Radzovce" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1862</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Krásnohorská Dlhá Lúka"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=35">Krásnohorská Dlhá Lúka</a></td><td class="text-left">Buzgo</td><td>Slaná</td><td>314</td><td>28.10.2026 22:00</td><td>6.187</td><td><a href="/Image/katalog/pzv/img/1620886563_1862_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Krásnohorská Dlhá Lúka" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1869</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Slavec - Čierna vyvieračka"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=36">Slavec - Čierna vyvieračka</a></td><td class="text-left">Čierna vyvieračka</td><td>Slaná</td><td>237</td><td>28.10.2026 22:00</td><td>11.76</td><td><a href="/Image/katalog/pzv/img/1620886776_1869_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Slavec - Čierna vyvieračka" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>1920</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Gemerské Teplice"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=58">Gemerské Teplice</a></td><td class="text-left">Hlavište 1+2</td><td>Slaná</td><td>244</td><td>28.10.2026 22:00</td><td>1.35</td><td><a href="/Image/katalog/pzv/img/1620886898_1920_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Gemerské Teplice" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>2008</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Jasov"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=136">Jasov</a></td><td class="text-left">Teplica</td><td>Bodva</td><td>290</td><td>28.10.2026 06:00</td><td>6.836</td><td>-</td></tr><tr><td>2024</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Silická Jablonica"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=39">Silická Jablonica</a></td><td class="text-left">Mlynský</td><td>Bodva</td><td>263</td><td>28.10.2026 18:00</td><td>1.234</td><td><a href="/Image/katalog/pzv/img/1620887237_2024_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Silická Jablonica" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>2116</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Hranovnica"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=137">Hranovnica</a></td><td class="text-left">Na Hranovnickom Plese</td><td>Hornád</td><td>800</td><td>28.10.2026 18:00</td><td>52</td><td><a href="/Image/katalog/pzv/img/1620887385_2116_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Hranovnica" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr><tr><td>2171</td><td class="text-left"><a  class="d-block" title="Zobraziť detailné záznamy o stanici Telgárt"  href="?page=1&amp;id=pzv_kvantita&amp;s_id=138">Telgárt</a></td><td class="text-left">V Zadnej doline 1</td><td>Hornád</td><td>1025</td><td>28.10.2026 18:00</td><td>22.69</td><td><a href="/Image/katalog/pzv/img/1620887693_2171_p.jpg" data-fancybox title="Zobraziť fotografiu stanice Telgárt" class="d-block text-center text-decoration-none"><i class="icon-photo"></i></a></td></tr></tbody></table>
+        <div id="pcontent-footer" class="mt-3"><div class="navig"><a href="javascript:void(0);" onclick="popUpWH('/sk/print_page.php'+window.location.search+'&amp;page=1364&amp;lang=sk',1250,600)">Tlačiť</a></div></div>
+        
+    </section>
+</div>
+<!-- /MAINCONTENT -->
+
+</div>
+
+
+
+
+
+<div class="mp-vystrahy-row">
+    <!-- CACHE [MAINPAGE_METEOWARNINGS_MAP_sk] - ts:2026-10-28 23:13:54, generated: 1.92ms] -->
+<div class="mp-vystraha-meteo">
+    <h2 id="mp-m-vystraha-header">Meteorologické výstrahy</h2>
+        <div class="mp-vystraha-mapa-wrapper">
+            <img src="/img/loading2.gif" class="mp-vystraha-loader" id="vmeteo-loader" alt="Načítavam údaje...">
+            <a href="?page=987" class="mp-vystraha-mapa-link" title="Meteorologické výstrahy"></a>
+            <object aria-labelledby="mp-m-vystraha-header" onload="onload_meteo_warnings_mpage()" type="image/svg+xml" data="/img/svg/meteo_vystrahy_mapa.svg" id="mp-meteo-mapa-svg">
+                Váš prehliadač nepodporuje zobrazovanie SVG 
+            </object>
+            <script>
+                 var mp_meteo_vystrahy_data = [];
+ mp_meteo_vystrahy_data[0] = [{'o':1021,'k':'KM','s':1},{'o':1034,'k':'NO','s':1},{'o':1071,'k':'ZA','s':1},{'o':1040,'k':'PB','s':1},{'o':1014,'k':'HE','s':1},{'o':1043,'k':'PU','s':1},{'o':1009,'k':'DK','s':1},{'o':1062,'k':'TR','s':1},{'o':1042,'k':'PD','s':1},{'o':1006,'k':'BY','s':1},{'o':1027,'k':'MT','s':1},{'o':1052,'k':'SV','s':1},{'o':1068,'k':'CA','s':1},{'o':1015,'k':'IL','s':1},{'o':1047,'k':'RK','s':1},{'o':1063,'k':'TS','s':1}];
+ mp_meteo_vystrahy_data[1] = [{'o':1021,'k':'KM','s':1},{'o':1034,'k':'NO','s':1},{'o':1071,'k':'ZA','s':1},{'o':1040,'k':'PB','s':1},{'o':1014,'k':'HE','s':1},{'o':1043,'k':'PU','s':1},{'o':1009,'k':'DK','s':1},{'o':1062,'k':'TR','s':1},{'o':1042,'k':'PD','s':1},{'o':1006,'k':'BY','s':1},{'o':1027,'k':'MT','s':1},{'o':1052,'k':'SV','s':1},{'o':1068,'k':'CA','s':1},{'o':1015,'k':'IL','s':1},{'o':1047,'k':'RK','s':1},{'o':1063,'k':'TS','s':1}];
+ mp_meteo_vystrahy_data[2] = [];
+
+            </script>
+        </div>
+        <div class="mp-vystraha-meteo-buttons"><a href="?page=987&amp;d=0" title="Meteorologické výstrahy na stredu" class="v_btn_yellow active">St</a><a href="?page=987&amp;d=1" title="Meteorologické výstrahy na štvrtok" class="v_btn_yellow">Št</a><a href="?page=987&amp;d=2" title="Meteorologické výstrahy na piatok" class="v_btn_green">Pi</a></div>
+    </div>
+
+    
+<!-- /CACHE -->
+<!-- CACHE [MAINPAGE_HYDROWARNINGS_V2_MAP_sk] - ts:2026-10-28 23:13:12, generated: 1.639ms] -->
+<div class="mp-vystraha-hydro">
+    <h2 id="mp-h-vystraha-header">Hydrologické výstrahy</h2>
+        <div class="mp-vystraha-mapa-wrapper">
+            <img src="/img/loading2.gif" class="mp-vystraha-loader" id="vhydro-loader" alt="Načítavam údaje...">
+            <a href="?page=1680" class="mp-vystraha-mapa-link" title="Hydrologické výstrahy"></a>
+            <object aria-labelledby="mp-h-vystraha-header" onload="onload_hydro_warnings_mpage()" type="image/svg+xml" data="/img/svg/hydro_vystrahy_mapa_v3.svg" id="mp-hydro-mapa-svg">
+                Váš prehliadač nepodporuje zobrazovanie SVG 
+            </object>
+            <script>
+                var mp_hydro_vystrahy_data = [];
+
+            </script>
+        </div>
+        <div class="mp-vystraha-hydro-buttons"><a href="?page=1680&amp;d=0" title="Hydrologické výstrahy na stredu" class="v_btn_green active">St</a><a href="?page=1680&amp;d=1" title="Hydrologické výstrahy na štvrtok" class="v_btn_green">Št</a><a href="?page=1680&amp;d=2" title="Hydrologické výstrahy na piatok" class="v_btn_green">Pi</a></div>
+    </div>
+<!-- /CACHE -->
+<!-- CACHE [MAINPAGE_HYDRO_SPA_MAP_sk] - ts:2026-10-28 23:13:12, generated: 0.598ms] -->
+<div class="mp-vystraha-hydro">
+    <h2 id="mp-vs-vystraha-header">Stupne povodňovej aktivity</h2>
+        <div class="mp-vystraha-mapa-wrapper">
+            <img src="/img/loading2.gif" class="mp-vystraha-loader" id="vhydro-spa-loader" alt="Načítavam údaje...">
+            <a href="?page=1&amp;id=hydro_stpa&amp;PAtab=PAtab" class="mp-vystraha-mapa-link" title="Povodňová aktivita"></a>
+            <object aria-labelledby="mp-vs-vystraha-header" onload="onload_hydro_spa_mpage()" type="image/svg+xml" data="/img/svg/hydro_vystrahy_mapa.svg" id="mp-hydro-spa-mapa-svg">
+                Váš prehliadač nepodporuje zobrazovanie SVG 
+            </object>
+            <script>
+                var mp_hydro_spa_data = [];
+
+            </script>
+        </div>
+    </div>
+<!-- /CACHE -->
+<!-- CACHE [MAINPAGE_KO_WARNINGS_MAP_sk] - ts:2026-10-28 23:13:54, generated: 12.821ms] -->
+<div class="mp-vystraha-ko">
+    <h2 id="mp-ko-vystraha-header">Varovný systém kvality ovzdušia</h2>
+        <div class="mp-vystraha-mapa-wrapper">
+            <img src="/img/loading2.gif" class="mp-vystraha-loader" id="vko-loader" alt="Načítavam údaje...">
+            <a href="?page=?page=1&amp;id=oko_varovny_system" class="mp-vystraha-mapa-link" title="Varovný systém kvality ovzdušia"></a>
+            <object aria-labelledby="mp-ko-vystraha-header" onload="onload_ko_warnings_mpage()" type="image/svg+xml" data="/img/svg/meteo_vystrahy_mapa.svg" id="mp-ko-mapa-svg">
+                Váš prehliadač nepodporuje zobrazovanie SVG 
+            </object>
+            
+        </div>
+        <script>
+        var mp_ko_data = [];
+        </script>
+    </div>
+
+    
+<!-- /CACHE -->
+
+</div>
+
+<div class="mp-vystrahy-legenda">
+    <div class="l-header">Legenda výstrah: </div>
+    <div class="l-box bg-yellow" title="Žltá farba">1. stupeň</div>
+    <div class="l-box bg-orange" title="Oranžová farba">2. stupeň</div>
+    <div class="l-box bg-red" title="Červená farba">3. stupeň</div>
+</div>
+<div class="mp-row-wrapper">
+ <div class="mp-banner-col">
+<a href="https://www.shmu.sk/sk/?page=21" title="Meteorologický monitoring">
+<img loading="lazy" src="/File/ExtraFiles/mp_banery/images/banner_SMS.png" alt="Meteorologický monitoring" />
+</a>
+ </div>
+ <div class="mp-banner-col">
+<a href="https://kmo.shmu.sk/" title="Konferencia mladých odborníkov">
+<img loading="lazy" src="/File/ExtraFiles/mp_banery/images/kmo2.jpg" alt="Konferencia mladých odborníkov" />
+</a>
+ </div>
+ <div class="mp-banner-col">
+<a href="?page=2160" title="Štátna hydrologická sieť">
+<img loading="lazy" src="/File/ExtraFiles/mp_banery/images/hydro2.jpg" alt="Štátna hydrologická sieť" />
+</a>
+ </div>
+ <div class="mp-banner-col">
+<a href="?page=2451" title="Výsledky monitorovania kvality podzemnej vody">
+<img loading="lazy" src="/File/ExtraFiles/mp_banery/images/vysledky2.jpg" alt="Výsledky monitorovania kvality podzemnej vody" />
+</a>
+ </div>
+</div>
+<div class="mp-row-wrapper">
+ <div class="mp-banner-col">
+<a href="https://oeab.shmu.sk/" title="Odbor Emisie a biopalivá">
+<img loading="lazy" src="/File/ExtraFiles/mp_banery/images/OEaB_300x100_SHMU_banner1.png" alt="Odbor Emisie a biopalivá" />
+</a>
+ </div>
+ <div class="mp-banner-col">
+<a href="https://mpl.his.shmu.sk/" title="Modrá platforma SHMÚ">
+<img loading="lazy" src="/File/ExtraFiles/mp_banery/images/banner_modra_platforma.png" alt="Modrá platforma SHMÚ" />
+</a>
+ </div>
+ <div class="mp-banner-col">
+<a href="?page=1&amp;id=monitoring_sucha" title="Spravodajstvo monitoringu sucha SHMÚ">
+<img loading="lazy" src="/File/ExtraFiles/mp_banery/images/sucho2.jpg" alt="Spravodajstvo monitoringu sucha SHMÚ" />
+</a>
+ </div>
+ <div class="mp-banner-col">
+<a href="?page=2429" title="Kvalita vôd v chránených vodohospodárskych oblastiach">
+<img loading="lazy" src="/File/ExtraFiles/mp_banery/images/kvalita2.jpg" alt="Kvalita vôd v chránených vodohospodárskych oblastiach" />
+</a>
+ </div>
+</div>
+
+<div class="box-volajte-meteo">
+    Pre viac informácií o počasí volajte od 8:00 do 17:30 meteorológovi: <a href="tel:+421988500015" class="pointer-cursor">0988 500 015</a><br />    <span class="small">
+        cena volania 1,23 € s DPH za každú začatú minútu volania                    - <a target="_blank" title="Všeobecné podmienky poskytovania audiotexových služieb spoločnosti Mediatex s.r.o. – Mediatex" href="https://vop.mediatex.sk/vseobecne-podmienky-poskytovania-audiotexovych-sluzieb-spolocnosti-mediatex-s-r-o/" rel="noopener,noreferrer">VOP</a>
+                    - <a target="_blank" title="Informačné memorandum o spracovaní osobných údajov za účelom poskytnutia služby Audiotex klientovi (plnenie zmluvy) (IS Audiotex) – Mediatex" href="https://vop.mediatex.sk/informacne-memorandum-o-spracovani-osobnych-udajov-za-ucelom-poskytnutia-sluzby-audiotex-klientovi-plnenie-zmluvy-is-audiotex/" rel="noopener,noreferrer">OOÚ</a>
+                </span>
+</div>
+<!-- CACHE [MAINPAGE_AKTUALITY_sk] - ts:2026-10-28 23:13:27, generated: 0.922ms] -->
+<div class="clearfix"></div><div class="mp-aktuality-header"><a href="?page=2049" title="Zobraziť všetky aktuality"><h2>Aktuality</h2></a></div><div class="mp-aktuality-wrapper"><div class="mp-aktuality"><div class="mp-aktuality--box"><a href="?page=2049&amp;id=1794" title="28.10.2026 - Fenologické pozorovania borovice horskej (Pinus mugo Turra) na lokalite Skalnaté Pleso v období 2016-2026"><figure><img loading="lazy" src="/File/ExtraFiles/ODBORNE_AKTUALITY/images/PR/13(1).png" alt="Fenologické pozorovania borovice horskej (Pinus mugo Turra) na lokalite Skalnaté Pleso v období 2016-2026" /></figure><div class="mp-aktuality--box-header"><span>28.10.2026 | <strong class="c-klimat">Klimatológia</strong></span><h3>Fenologické pozorovania borovice horskej (Pinus mugo Turra) na lokalite Skalnaté Pleso v období 2016-2026</h3></div><div class="mp-aktuality--box-abstract"><p>V roku 2016 bola v rámci spolupráce medzi SHMÚ a Ústavom vied o Zemi Slovenskej akadémie vied (ÚVZ SAV pracovisko Stará Lesná) v blízkosti observatória SAV na Skalnatom Plese (49° 11′ 22″ s. š., 20° 14′ 04″ v. d., 1 778 m n. m.) založená účelová stanica pre pozorovanie fenologických fáz borovice horskej (Pinus mugo Turra), (Obr. 1). Iniciatíva na založenie spolupráce vyšla zo strany ÚVZ SAV s cieľom skúmať, ako sekundárne znečistenie ovzdušia a klimatické výkyvy ovplyvňujú rast drevín vo vysokohorskom prostredí. Zo strany SHMÚ bol zabezpečený odborný dohľad a aktívna účasť pri zakladaní plochy.</p></div></a></div><div class="mp-aktuality--box"><a href="?page=2049&amp;id=1793" title="23.10.2026 - Zasadnutie Európskeho povodňového výstražného systému EFAS"><figure><img loading="lazy" src="/File/ExtraFiles/ODBORNE_AKTUALITY/images/PR/Spolocna_foto.JPG" alt="Zasadnutie Európskeho povodňového výstražného systému EFAS" /></figure><div class="mp-aktuality--box-header"><span>23.10.2026 | <strong class="c-hydro">Hydrológia</strong></span><h3>Zasadnutie Európskeho povodňového výstražného systému EFAS</h3></div><div class="mp-aktuality--box-abstract"><p>V dňoch 1. a 2. októbra 2026 sa v Bratislave konalo 21. výročné zasadnutie Európskeho povodňového výstražného systému EFAS, ktoré organizoval Slovenský hydrometeorologický ústav. Ide o každoročné stretnutie partnerov EFASu, ktorými sú najmä hydrologické predpovedné služby a úrady civilnej ochrany na národnej alebo regionálnej úrovni, a prevádzkovateľov systému – operačných centier (Zber meteorologických dát – METEO, Zber hydrologických dát – HYDRO, Výpočtové centrum – COMP, Globálne monitorovanie povodní –GFM a Centrum pre Analýzu a šírenie informácií – DISS, ktorého súčasťou je aj Slovenský hydrometeorologický ústav).</p></div></a></div><div class="mp-aktuality--list"><div class="mp-aktuality--list-item"><a href="?page=2049&amp;id=1792" title="19.10.2026 - Hodnotenie hydrologickej situácie v mesiaci september 2026 "><figure><img loading="lazy" src="/File/ExtraFiles/ODBORNE_AKTUALITY/_thumbs/Images/PR/Obr__(6).jpg" alt="Hodnotenie hydrologickej situácie v mesiaci september 2026 " /></figure><div class="mp-aktuality--list-item-details"><span>19.10.2026 | <strong class="c-dark">SHMÚ</strong></span><h3>Hodnotenie hydrologickej situácie v mesiaci september 2026 </h3></div></a></div><div class="mp-aktuality--list-item"><a href="?page=2049&amp;id=1791" title="16.10.2026 - Aktuálna situácia na Dunaji"><figure><img loading="lazy" src="/File/ExtraFiles/ODBORNE_AKTUALITY/_thumbs/Images/PR/Snimka_obrazovky_2026-10-16_144556.png" alt="Aktuálna situácia na Dunaji" /></figure><div class="mp-aktuality--list-item-details"><span>16.10.2026 | <strong class="c-dark">SHMÚ</strong></span><h3>Aktuálna situácia na Dunaji</h3></div></a></div><div class="mp-aktuality--list-item"><a href="?page=2049&amp;id=1790" title="14.10.2026 - Pretrvávajúce pôdne sucho a jeho dopady počas jesene 2026"><figure><img loading="lazy" src="/File/ExtraFiles/ODBORNE_AKTUALITY/_thumbs/Images/PR/obr_1(3).jpg" alt="Pretrvávajúce pôdne sucho a jeho dopady počas jesene 2026" /></figure><div class="mp-aktuality--list-item-details"><span>14.10.2026 | <strong class="c-klimat">Klimatológia</strong></span><h3>Pretrvávajúce pôdne sucho a jeho dopady počas jesene 2026</h3></div></a></div><div class="mp-aktuality--list-item"><a href="?page=2049&amp;id=1789" title="12.10.2026 - Tohtoročné sucho sa stále nekončí. Aká je jeho bilancia doteraz?"><figure><img loading="lazy" src="/File/ExtraFiles/ODBORNE_AKTUALITY/_thumbs/Images/PR/md-hasanuzzaman-himel-mz278SNa2ek-unsplash.jpg" alt="Tohtoročné sucho sa stále nekončí. Aká je jeho bilancia doteraz?" /></figure><div class="mp-aktuality--list-item-details"><span>12.10.2026 | <strong class="c-klimat">Klimatológia</strong></span><h3>Tohtoročné sucho sa stále nekončí. Aká je jeho bilancia doteraz?</h3></div></a></div></div></div></div>
+<!-- /CACHE -->
+<div class="mp-partneri">
+
+    <a href="https://www.stvr.sk" title="Slovenská televízia a rozhlas" target="_blank" rel="noopener">
+        <img loading="lazy"
+             src="/Image/partneri/stvr-logo.png"
+             alt="Slovenská televízia a rozhlas">
+    </a>
+
+    <a href="http://www.dmc.fmph.uniba.sk/" title="Oddelenie meteorologie a klimatologie KAFZaM UK Bratislava" target="_blank" rel="noopener">
+        <img loading="lazy"
+             src="/Image/partneri/uk_logo.png"
+             alt="Oddelenie meteorologie a klimatologie KAFZaM UK Bratislava">
+    </a>
+
+    <a href="https://fyzgis.fns.uniba.sk/" title="Katedra fyzickej geografie a geoinformatiky PriF UK Bratislava" target="_blank" rel="noopener">
+        <img loading="lazy"
+             src="/Image/partneri/prif_logo.png"
+             alt="Katedra fyzickej geografie a geoinformatiky PriF UK Bratislava">
+    </a>
+
+    <a href="https://www.ecmwf.int/" title="European Centre for Medium-Range Weather Forecasts - ECMWF" target="_blank" rel="noopener">
+        <img loading="lazy"
+             src="/Image/partneri/ecmwf_logo.png"
+             alt="European Centre for Medium-Range Weather Forecasts - ECMWF">
+    </a>
+
+    <a href="https://www.wmo.int/" title="World Meteorological Organization" target="_blank" rel="noopener">
+        <img loading="lazy"
+             src="/Image/partneri/wmo_logo.png"
+             alt="World Meteorological Organization">
+    </a>
+
+    <a href="https://www.vuvh.sk/" title="Výskumný ústav vodného hospodárstva" target="_blank" rel="noopener">
+        <img loading="lazy"
+             src="/Image/partneri/vuvh_logo.png"
+             alt="Výskumný ústav vodného hospodárstva">
+    </a>
+
+    <a href="?page=864" title="EurAqua">
+        <img loading="lazy"
+             src="/Image/partneri/euraqua_logo.png"
+             alt="EurAqua">
+    </a>
+
+    <a href="?page=1827" title="Eumetsat">
+        <img loading="lazy"
+             src="/Image/partneri/eumetsat_logo.svg"
+             alt="Eumetsat">
+    </a>
+
+    <a href="https://www.meteoalarm.org/" title="Meteoalarm - Alerting Europe for extreme weather" target="_blank" rel="noopener">
+        <img loading="lazy"
+             src="/Image/partneri/meteoalarm_logo.png"
+             alt="Meteoalarm - Alerting Europe for extreme weather">
+    </a>
+
+    <a href="https://www.uvzsr.sk/" title="Úrad verejného zdravotníctva Slovenskej republiky" target="_blank" rel="noopener">
+        <img loading="lazy"
+             src="/Image/partneri/urad-verejneho-zdravotnictva.png"
+             alt="Úrad verejného zdravotníctva Slovenskej republiky">
+    </a>
+
+</div>
+
+
+
+</main>
+<!-- /CONTENT -->
+
+<!--  FOOTER -->
+<footer>
+
+    <nav class="bottom-nav no-print">
+        <ul>
+            <li><a href="javascript:void(0)" onclick="CookieConsent.show(true)">Nastavenie ukladania cookies</a><br></li>
+            <li><a href="?page=611">Mapa stránok</a></li>
+            <li><a href="?page=2475">Vyhlásenie o prístupnosti</a></li>
+            <li><a href="?page=1791">Sprístupňovanie informácii</a></li>
+            <li><a target="_blank" href="//private.shmu.sk/pz/" title="Prihlásenie do privátnej zóny">Privátna zóna</a></li>
+            <li><a href="?page=5">Kontakty</a></li>
+        </ul>
+    </nav>
+    <div class="clearfix"></div>
+
+            <div class="mb-3" >
+            <a class="float-left mr-2" href="https://www.facebook.com/shmu.sk/" onclick="window.open(this.href,'_blank');return false;"><img src="/img/fb.png" width="24" height="24" alt="SHMÚ na Facebook" title="SHMÚ na Facebook" /></a>
+            <div class="fb-like"
+                 data-action="like"
+                 data-layout="standard"
+                 data-share="true"
+                 data-size="large"
+                 data-show-faces="true"
+                 data-href="https://www.facebook.com/shmu.sk/">
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    
+
+    <p><strong>&copy; 2026 Slovenský hydrometeorologický ústav</strong></p>
+    <p>Všetky informácie, texty a elektronické obrázky, ktoré obsahuje tento server <a href="//www.shmu.sk">www.shmu.sk</a> sú duševným vlastníctvom Slovenského hydrometeorologického ústavu a nesmú byť reprodukované alebo použité iným spôsobom, ako pre vlastnú potrebu, bez súhlasu SHMÚ. Od meteorologických a hydrologických informácií z iného zdroja ako SHMÚ sa dištancujeme a nezodpovedáme za ich kvalitu.
+
+    </p>
+
+    <a href="#content" title="Návrat hore" class="back-top" id="back-top"><span class="icon-chevron-up"></span></a>
+
+</footer>
+<!--  /FOOTER -->
+
+</div>
+<!--  /CONTAINER -->
+
+
+
+
+<!-- generated: 36.53ms, server: WEBOUT, server_id: 2, build: 202610190736 -->
+</body>
+</html>

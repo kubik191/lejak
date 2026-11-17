@@ -1,0 +1,51 @@
+{% from "macros.html" import status_badge, progress %}
+{% set active = run.status in ('queued', 'running') %}
+<div id="run-progress" {% if active %}hx-get="/runs/{{ run.id }}" hx-trigger="every 2s" hx-swap="outerHTML"{% endif %}>
+  {% if not active and request.headers.get('HX-Request') %}<script>location.reload()</script>{% endif %}
+  <div class="flex flex-wrap items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <h1 class="text-2xl font-semibold tracking-tight">{{ source.name }} — run #{{ run.id }}</h1>
+      {{ status_badge(run.status) }}
+    </div>
+    <div class="flex gap-2">
+      {% if active and not run.cancel_requested %}
+        <form hx-post="/runs/{{ run.id }}/cancel"><button class="btn btn-danger">Cancel run</button></form>
+      {% elif not active %}
+        <form hx-post="/runs" hx-vals='{"source": "{{ run.source_key }}"}'><button class="btn btn-secondary">Run again</button></form>
+      {% endif %}
+    </div>
+  </div>
+  <p class="mt-1 text-sm text-slate-500">
+    Triggered by <b>{{ run.trigger }}</b> · queued {{ run.queued_at | dt(true) }}
+    {% if run.started_at %} · started {{ run.started_at | dt(true) }}{% endif %}
+    {% if run.finished_at %} · finished {{ run.finished_at | dt(true) }}{% endif %}
+  </p>
+
+  {% if run.error %}
+  <div class="mt-4 rounded-lg border border-rose-200 bg-rose-50 p-3 text-sm text-rose-800">{{ run.error }}</div>
+  {% endif %}
+  {% if run.cancel_requested and active %}
+  <div class="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800">Cancellation requested — stopping after the stations currently being fetched.</div>
+  {% endif %}
+
+  {% if run.status == 'running' %}
+  <div class="mt-5">{{ progress(run) }}<div class="mt-1 text-xs text-slate-500">{{ run.progress_pct }} % · {{ run.stations_done }} of {{ run.stations_total }} stations processed</div></div>
+  {% elif run.status == 'queued' %}
+  <div class="mt-5 text-sm text-slate-500">Waiting for the worker to pick this run up…</div>
+  {% endif %}
+
+  <div class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-5">
+    {% for label, value in [
+      ("Duration", run.duration_seconds | duration),
+      ("Stations OK", run.stations_ok ~ " / " ~ run.stations_total),
+      ("Stations failed", run.stations_failed),
+      ("New measurements", run.rows_new | num),
+      ("Web requests", run.requests_made | num),
+    ] %}
+    <div class="card p-4">
+      <div class="text-xs font-medium uppercase tracking-wide text-slate-500">{{ label }}</div>
+      <div class="mt-1 text-2xl font-semibold tabular-nums">{{ value }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

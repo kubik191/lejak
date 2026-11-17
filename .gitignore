@@ -1,0 +1,33 @@
+# Dependencies & virtual environments
+**/node_modules/
+**/.pnp
+**/.pnp.*
+**/.venv/
+**/venv/
+
+# Build & framework outputs
+**/.next/
+**/out/
+**/build/
+**/.vercel/
+**/*.tsbuildinfo
+**/next-env.d.ts
+
+# Python caches
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+
+# Environment & local runtime data
+**/.env
+**/.env.local
+**/.env.*.local
+SportsHall-booking-system/data/
+vesna-collector/data/
+
+# Large local GIS datasets (8.3 GB raw shapefiles & rasters)
+QGIS-plugin-automation/QGIS-FILES/
+
+# OS / Editor
+.DS_Store
+Thumbs.db

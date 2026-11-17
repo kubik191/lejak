@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEJAK — Work lighter. Move faster.</title>
+  <meta name="description" content="LEJAK builds websites, chatbots and automations, and trains teams to use them. Technology that gives people time back.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #122033;
+      --muted: #51627a;
+      --blue: #2b6cff;
+      --blue-deep: #1a4fd4;
+      --ice: #e8f0ff;
+      --paper: #f4f7fb;
+      --card: #ffffff;
+      --navy: #0d1b33;
+      --line: #e2e9f2;
+      --shadow: 0 16px 40px rgba(18, 32, 51, 0.08);
+      --radius: 20px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    img, svg { display: block; max-width: 100%; }
+
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      background: var(--navy);
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      z-index: 20;
+    }
+
+    .skip:focus { top: 1rem; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 2rem));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(244, 247, 251, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+    }
+
+    .site-header.is-stuck { border-bottom-color: var(--line); }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 4.5rem;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      font-size: 1.05rem;
+    }
+
+    .logo-mark {
+      width: 1.7rem;
+      height: 1.7rem;
+    }
+
+    .nav-toggle {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .nav-button {
+      display: none;
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nav a:hover { color: var(--ink); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      min-height: 2.75rem;
+      padding: 0.65rem 1.15rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid transparent;
+    }
+
+    .button-primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    .button-primary:hover { background: var(--blue-deep); }
+
+    .button-ghost {
+      background: white;
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .button-ghost:hover { border-color: #c5d2e4; }
+
+    .hero {
+      padding: 3.5rem 0 2rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.8rem;
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      margin-bottom: 1rem;
+      font-size: clamp(2.7rem, 6vw, 4.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+    }
+
+    .lede {
+      max-width: 38rem;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.6rem 0 1.2rem;
+    }
+
+    .promise {
+      display: inline-block;
+      max-width: 36rem;
+      margin: 0;
+      padding: 0.85rem 1rem;
+      background: var(--ice);
+      color: #23406e;
+      border-radius: 14px;
+      font-weight: 600;
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 320px;
+      display: grid;
+      place-items: center;
+    }
+
+    .c-mark {
+      width: min(280px, 70%);
+      height: auto;
+    }
+
+    .confirm-card {
+      position: absolute;
+      top: 18%;
+      left: 0;
+      width: min(240px, 70%);
+      background: white;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 1rem 1.05rem;
+    }
+
+    .confirm-card strong { display: block; }
+    .confirm-card span { color: var(--muted); font-size: 0.92rem; }
+
+    .section { padding: 4.25rem 0; scroll-margin-top: 4.75rem; }
+
+    .section-head { max-width: 40rem; margin-bottom: 1.8rem; }
+
+    h2 {
+      margin-bottom: 0.55rem;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+    }
+
+    .section-head p, .step p, .example p, .person p, .offer p {
+      color: var(--muted);
+    }
+
+    .services {
+      background: white;
+      border-block: 1px solid var(--line);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .service, .step, .example, .person {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .service {
+      padding: 1.2rem;
+    }
+
+    .icon {
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 999px;
+      background: var(--ice);
+      display: grid;
+      place-items: center;
+      margin-bottom: 0.9rem;
+      color: var(--blue);
+    }
+
+    .service h3, .step h3, .person h3 {
+      margin-bottom: 0.35rem;
+      font-size: 1.05rem;
+    }
+
+    .service p, .note { color: var(--muted); }
+
+    .note {
+      margin: 1.15rem 0 0;
+      padding: 0.95rem 1rem;
+      background: var(--paper);
+      border-radius: 14px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .step { padding: 1.3rem 1.2rem 1.4rem; }
+
+    .num {
+      display: block;
+      margin-bottom: 0.8rem;
+      color: var(--blue);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .examples { display: grid; gap: 1rem; }
+
+    .example { padding: 1.35rem 1.3rem 1.25rem; }
+
+    .example-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: start;
+      margin-bottom: 0.45rem;
+    }
+
+    .example h3 { margin: 0; font-size: 1.2rem; letter-spacing: -0.02em; }
+
+    .tag {
+      flex: none;
+      color: var(--blue-deep);
+      background: var(--ice);
+      border-radius: 999px;
+      padding: 0.28rem 0.65rem;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+
+    .stay {
+      margin: 0.9rem 0 0;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--line);
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .caption {
+      margin: 0.9rem 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .offer {
+      background: var(--navy);
+      color: white;
+      border-radius: 28px;
+      padding: 2rem 1.6rem;
+    }
+
+    .offer .eyebrow { color: #9db7ff; }
+
+    .offer h2 { color: white; }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .offer ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .offer li {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 0.85rem 1rem;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .person { padding: 1.3rem; }
+
+    .who {
+      display: flex;
+      gap: 0.9rem;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .avatar {
+      width: 3.1rem;
+      height: 3.1rem;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--ice);
+      color: var(--blue-deep);
+      font-weight: 800;
+    }
+
+    .role {
+      margin: 0;
+      color: var(--blue);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1rem;
+    }
+
+    .links a {
+      text-decoration: none;
+      background: var(--paper);
+      border-radius: 999px;
+      padding: 0.55rem 0.8rem;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .links a:hover { background: var(--ice); }
+
+    .contact {
+      background:
+        radial-gradient(600px 220px at 100% 0%, rgba(43, 108, 255, 0.16), transparent 60%),
+        var(--navy);
+      color: white;
+    }
+
+    .contact .eyebrow { color: #9db7ff; }
+    .contact h2 { color: white; max-width: 16ch; }
+    .contact .section-head p { color: #c5d0e0; }
+
+    .contact-form {
+      position: relative;
+      margin-bottom: 0;
+      padding: 1.4rem 1.3rem 1.45rem;
+      color: var(--ink);
+      background: white;
+      border-radius: var(--radius);
+    }
+
+    .contact-form h3 {
+      margin-bottom: 0.25rem;
+      font-size: 1.2rem;
+    }
+
+    .form-note {
+      margin: 0 0 1rem;
+      color: var(--muted);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem 1rem;
+    }
+
+    .field { display: grid; gap: 0.35rem; }
+
+    .field-wide { grid-column: 1 / -1; }
+
+    .field label {
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      min-height: 3rem;
+      padding: 0.75rem 0.9rem;
+      color: var(--ink);
+      font: inherit;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .field textarea {
+      min-height: 8.5rem;
+      resize: vertical;
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    button.button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .button:disabled {
+      opacity: 0.65;
+      cursor: progress;
+    }
+
+    .form-status {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .form-status.is-success { color: #067647; }
+    .form-status.is-error { color: #b42318; }
+
+    .hp { display: none; }
+
+    footer {
+      padding: 1.4rem 0 2rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .card-grid, .steps, .offer-grid, .people-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card-grid { grid-template-columns: 1fr 1fr; }
+
+      .hero-art { min-height: 260px; margin-top: 0.5rem; }
+
+      .nav-button { display: inline-flex; }
+
+      .nav {
+        display: none;
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        top: 4.3rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.2rem;
+        padding: 0.7rem;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav a { padding: 0.7rem 0.6rem; }
+
+      .nav-toggle:checked ~ .nav { display: flex; }
+    }
+
+    @media (max-width: 640px) {
+      .card-grid, .form-grid { grid-template-columns: 1fr; }
+      .example-top { flex-direction: column; }
+      h1 { font-size: 2.5rem; }
+      .hero-art {
+        min-height: 0;
+        display: grid;
+        justify-items: start;
+        padding-top: 0.5rem;
+      }
+      .confirm-card { position: static; width: min(100%, 280px); }
+      .c-mark { width: 180px; justify-self: end; margin-top: -4.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="#top" aria-label="LEJAK home">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M23 7.5a10 10 0 1 0 .2 17" fill="none" stroke="#2b6cff" stroke-width="3.4" stroke-linecap="round"/>
+        </svg>
+        LEJAK
+      </a>
+      <input class="nav-toggle" id="nav-toggle" type="checkbox">
+      <label class="nav-button" for="nav-toggle">Menu</label>
+      <nav class="nav" aria-label="Primary">
+        <a href="#services">What we do</a>
+        <a href="#how">How it works</a>
+        <a href="#examples">Projects</a>
+        <a href="#people">People</a>
+        <a href="https://github.com/kubik191/lejak" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="button button-primary" href="#contact">Contact us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Good tech. More human.</p>
+          <h1>Work lighter.<br>Move faster.</h1>
+          <p class="lede">We build websites, chatbots and automations that take the repetitive stuff off your team’s plate.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Tell us what you need</a>
+            <a class="button button-ghost" href="#how">See how it works</a>
+          </div>
+          <p class="promise">More room for people. We don’t replace people. We give them time for what matters.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg class="c-mark" viewBox="0 0 200 200">
+            <path d="M146 42a78 78 0 1 0 2 116" fill="none" stroke="#2b6cff" stroke-width="22" stroke-linecap="round"/>
+          </svg>
+          <div class="confirm-card">
+            <strong>Booking confirmed</strong>
+            <span>One less thing to do</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">What we can help with</p>
+          <h2>Less busywork. More possibility.</h2>
+          <p>From your first website to that task nobody wants to do again. We make technology simple and useful.</p>
+        </div>
+        <div class="card-grid">
+          <article class="service">
+            <div class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M6 15h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Websites</h3>
+            <p>Clear, fast websites. Built around your goals.</p>
+          </article>
+          <article class="service">
+            <div class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 4.5h12v7.2a2 2 0 0 1-2 2H7l-3.2 2v-2H5a2 2 0 0 1-2-2V4.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Chatbots</h3>
+            <p>Helpful answers. Less repetition for your team.</p>
+          </article>
+          <article class="service">
+            <div class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3.5" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M6 2.8v2M12 2.8v2M3 7.2h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Booking &amp; automation</h3>
+            <p>Smoother bookings. Everyday tasks, handled.</p>
+          </article>
+          <article class="service">
+            <div class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="6" r="2.2" stroke="currentColor" stroke-width="1.6"/><path d="M4.2 14.2c.7-2.2 2.4-3.3 4.8-3.3s4.1 1.1 4.8 3.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Consulting &amp; training</h3>
+            <p>Everyday tools and AI. Confidence to use them.</p>
+          </article>
+        </div>
+        <p class="note">Training you can use straight away: Outlook, email and Excel, plus AI chatbots and agents. Always grounded in your everyday work.</p>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>A simple path to a lighter day.</h2>
+          <p>Real conversations. Clear next steps. Something that actually works for you.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <span class="num">01</span>
+            <h3>We talk</h3>
+            <p>We listen, ask questions and find where your time goes.</p>
+          </article>
+          <article class="step">
+            <span class="num">02</span>
+            <h3>We build or teach</h3>
+            <p>A practical solution or hands-on training. No unnecessary complexity.</p>
+          </article>
+          <article class="step">
+            <span class="num">03</span>
+            <h3>You launch and save time</h3>
+            <p>We help you get started, so the benefits become part of your day.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="examples" style="padding-top: 0;">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Built prototypes</p>
+          <h2>Real problems. Practical solutions.</h2>
+          <p>Three working prototypes from our <a href="https://github.com/kubik191/lejak" target="_blank" rel="noopener noreferrer">LEJAK GitHub repository</a>, built around real workflows that keep people in control.</p>
+        </div>
+        <div class="examples">
+          <article class="example">
+            <div class="example-top">
+              <h3>HallBook — Booking and inbox, without the back-and-forth</h3>
+              <span class="tag">Booking &amp; automation</span>
+            </div>
+            <p>If customers still book by email or paper, we can put a real booking system behind that. An assistant reads the message, checks the calendar, holds the time, and sends a MobilePay or bank-transfer link. Recurring bookings are imported once. Staff can still edit everything by hand. <a href="https://github.com/kubik191/lejak/tree/main/SportsHall-booking-system" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a></p>
+            <p class="stay">Unusual requests, like discounts or special deals, go to a person, not automatic booking.</p>
+          </article>
+          <article class="example">
+            <div class="example-top">
+              <h3>VESNA Collector — Data collection that watches itself</h3>
+              <span class="tag">Automation &amp; monitoring</span>
+            </div>
+            <p>If someone on your team still fetches data by hand, or a job runs overnight and fails without anyone noticing, we can replace that with a scheduled collector. It collects ~1,100 SHMÚ stations in parallel (~6 min vs 33 min), stores a clean time-series history, and shows its own health on a FastAPI dashboard. <a href="https://github.com/kubik191/lejak/tree/main/vesna-collector" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a></p>
+            <p class="stay">It emails you only when something actually breaks. People get involved when attention is needed.</p>
+          </article>
+          <article class="example">
+            <div class="example-top">
+              <h3>Hydro Doplnenie — Software that does the tedious copying</h3>
+              <span class="tag">Workflow tool · QGIS 3.34+</span>
+            </div>
+            <p>If specialists spend hours copying points, fields, or files from one place to another, we can build a QGIS plugin that does the mapping and Excel rating-curve interpolation, shows a preview, and imports the selected records with a timestamped backup. <a href="https://github.com/kubik191/lejak/tree/main/QGIS-plugin-automation" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a></p>
+            <p class="stay">The specialist still reviews and confirms. The tool takes over the copying.</p>
+          </article>
+        </div>
+        <p class="caption">Full source code and documentation live in the <a href="https://github.com/kubik191/lejak" target="_blank" rel="noopener noreferrer">LEJAK GitHub repository</a>.</p>
+
+        <div class="offer" style="margin-top: 1.5rem;">
+          <div class="offer-grid">
+            <div>
+              <p class="eyebrow">What you get</p>
+              <h2>The setting changes. The offer stays the same.</h2>
+            </div>
+            <ul>
+              <li>A hall, an office, a lab, or a map. We start from the work you already do.</li>
+              <li>Repetition gets automated. Judgment stays with the people who know the job.</li>
+              <li>We can sit with your team and train them, including on AI, so the new process sticks.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="people" style="padding-top: 0;">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">The people behind LEJAK</p>
+          <h2>More human. Less routine.</h2>
+          <p>LEJAK was started by two friends who believe technology should help people, not replace them. We build websites, chatbots, booking systems and automations, and train teams to use tech and AI confidently. Owners save money, employees save time and nerves, and people stay in control of the decisions that need a human.</p>
+        </div>
+        <div class="people-grid">
+          <article class="person">
+            <div class="who">
+              <div class="avatar" aria-hidden="true">JK</div>
+              <div>
+                <h3>Jakub Kucera</h3>
+                <p class="role">Co-owner · Development &amp; automation</p>
+              </div>
+            </div>
+            <p>Turns repetitive tasks into simple, useful solutions.</p>
+            <div class="links">
+              <a href="mailto:jakub.kucera@outlook.sk">jakub.kucera@outlook.sk</a>
+              <a href="tel:+4571644059">+45 71 64 40 59</a>
+            </div>
+          </article>
+          <article class="person">
+            <div class="who">
+              <div class="avatar" aria-hidden="true">LG</div>
+              <div>
+                <h3>Leo Gurtner</h3>
+                <p class="role">Co-owner · Consulting &amp; training</p>
+              </div>
+            </div>
+            <p>Helps people feel confident and comfortable with technology.</p>
+            <div class="links">
+              <a href="mailto:leogurtner@outlook.com">leogurtner@outlook.com</a>
+              <a href="tel:+4591613212">+45 91 61 32 12</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Let’s talk</p>
+          <h2>Tell us what you need, we’ll get back to you.</h2>
+          <p>An idea, a challenge, or just a question? Send one message and it reaches both of us. Or call whichever of us fits.</p>
+        </div>
+        <form class="contact-form" id="contact-form" action="https://formsubmit.co/jakub.kucera@outlook.sk" method="POST">
+          <h3>Send a message</h3>
+          <p class="form-note">It goes to Jakub and Leo together.</p>
+          <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_cc" value="leogurtner@outlook.com">
+          <input type="hidden" name="_subject" value="New message from the LEJAK website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="form-grid">
+            <div class="field">
+              <label for="contact-name">Name</label>
+              <input id="contact-name" name="name" type="text" autocomplete="name" required maxlength="120">
+            </div>
+            <div class="field">
+              <label for="contact-email">Email</label>
+              <input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="160">
+            </div>
+            <div class="field field-wide">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" required maxlength="4000"></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="button button-primary" type="submit">Send message</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 LEJAK. All rights reserved.</span>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+  <script>
+    const header = document.querySelector(".site-header");
+    const toggle = document.querySelector("#nav-toggle");
+    const onScroll = () => header.classList.toggle("is-stuck", window.scrollY > 4);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    document.querySelectorAll(".nav a").forEach((link) => {
+      link.addEventListener("click", () => { toggle.checked = false; });
+    });
+
+    const contactForm = document.querySelector("#contact-form");
+    const formStatus = document.querySelector("#form-status");
+    const submitButton = contactForm.querySelector("button[type=submit]");
+
+    const clean = (value) => String(value || "").trim().replace(/[\r\n]+/g, " ");
+
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const data = new FormData(contactForm);
+      if (String(data.get("_honey") || "").trim()) {
+        contactForm.reset();
+        formStatus.textContent = "Sent. Both of us have it, and we’ll reply soon.";
+        formStatus.className = "form-status is-success";
+        return;
+      }
+
+      const name = clean(data.get("name"));
+      const email = clean(data.get("email"));
+      const message = String(data.get("message") || "").trim();
+      submitButton.disabled = true;
+      formStatus.textContent = "Sending…";
+      formStatus.className = "form-status";
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/jakub.kucera@outlook.sk", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            message,
+            _replyto: email,
+            _cc: "leogurtner@outlook.com",
+            _subject: `LEJAK website: message from ${name}`.slice(0, 180),
+            _template: "table",
+            _captcha: "false"
+          })
+        });
+        const payload = await response.json().catch(() => ({}));
+        const queuedForActivation = /activation/i.test(String(payload.message || ""));
+        if (!response.ok || (String(payload.success) === "false" && !queuedForActivation)) {
+          throw new Error("send failed");
+        }
+        contactForm.reset();
+        formStatus.textContent = "Sent. Both of us have it, and we’ll reply soon.";
+        formStatus.className = "form-status is-success";
+      } catch (error) {
+        formStatus.textContent = "We couldn’t send that just now. Email either of us directly and we’ll take it from there.";
+        formStatus.className = "form-status is-error";
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% from "macros.html" import health_dot, pager %}
+{% block title %}Stations · VESNA Collector{% endblock %}
+{% block content %}
+{% set qs = "source=" ~ source ~ "&q=" ~ (q | urlencode) %}
+<div class="mb-6">
+  <h1 class="text-2xl font-semibold tracking-tight">Stations</h1>
+  <p class="text-sm text-slate-500">Choose which stations are collected and spot the ones that need attention.</p>
+</div>
+
+<form method="get" class="mb-4 flex flex-wrap items-center gap-2">
+  <select name="source" class="input" onchange="this.form.submit()">
+    <option value="">All sources</option>
+    {% for key, s in SOURCES.items() %}<option value="{{ key }}" {{ 'selected' if key == source }}>{{ s.name }}</option>{% endfor %}
+  </select>
+  <input type="search" name="q" value="{{ q }}" placeholder="Search name, river or ID…" class="input w-72">
+  <input type="hidden" name="health" value="{{ health }}">
+  <button class="btn btn-secondary">Search</button>
+</form>
+
+<div class="mb-4 flex flex-wrap gap-1 text-sm">
+  {% set all_count = counts.values() | sum %}
+  <a href="/stations?{{ qs }}" class="rounded-md px-3 py-1 {{ 'bg-slate-800 text-white' if not health else 'bg-white ring-1 ring-slate-200 hover:bg-slate-50' }}">All <span class="opacity-60">{{ all_count }}</span></a>
+  {% for hk in ["ok", "stale", "warning", "failing", "new", "disabled"] %}
+    {% if counts[hk] %}
+    <a href="/stations?{{ qs }}&health={{ hk }}" class="inline-flex items-center gap-1.5 rounded-md px-3 py-1 {{ 'bg-slate-800 text-white' if health == hk else 'bg-white ring-1 ring-slate-200 hover:bg-slate-50' }}">
+      <span class="dot {{ HEALTH_STYLES[hk][0] }}"></span>{{ HEALTH_STYLES[hk][1] }} <span class="opacity-60">{{ counts[hk] }}</span>
+    </a>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<form method="post" action="/stations/bulk" class="card overflow-hidden" id="bulk">
+  <input type="hidden" name="back" value="/stations?{{ qs }}&health={{ health }}&page={{ page }}">
+  <div class="flex items-center gap-3 border-b border-slate-100 px-4 py-3 text-sm">
+    <span class="text-slate-500"><span id="sel-count">0</span> selected</span>
+    <button name="action" value="enable" class="btn btn-secondary btn-sm">Enable collection</button>
+    <button name="action" value="disable" class="btn btn-secondary btn-sm">Disable collection</button>
+    <span class="ml-auto text-slate-500">{{ total }} station{{ 's' if total != 1 }}</span>
+  </div>
+  <table class="tbl">
+    <thead><tr>
+      <th class="w-8"><input type="checkbox" id="sel-all" class="rounded"></th>
+      <th>Station</th><th>Source</th><th>Health</th><th>Newest data</th><th>Last success</th><th>Last error</th>
+    </tr></thead>
+    <tbody>
+    {% for st, h in rows %}
+      <tr class="{{ 'opacity-60' if not st.enabled }}">
+        <td><input type="checkbox" name="ids" value="{{ st.id }}" class="sel rounded"></td>
+        <td>
+          <a href="/stations/{{ st.id }}" class="font-medium hover:text-sky-700">{{ st.name }}</a>
+          <div class="text-xs text-slate-500">{{ st.river or st.basin or '' }} · ID {{ st.external_id }}</div>
+        </td>
+        <td class="text-slate-600">{{ SOURCES[st.source_key].name }}</td>
+        <td>{{ health_dot(h) }}{% if st.consecutive_failures > 1 %}<div class="text-xs text-rose-600">{{ st.consecutive_failures }} failures in a row</div>{% endif %}</td>
+        <td class="text-slate-600">{{ st.last_observed_at | dt }}</td>
+        <td class="text-slate-500">{{ st.last_success_at | ago }}</td>
+        <td class="max-w-xs truncate text-xs text-rose-700" title="{{ st.last_error or '' }}">{{ st.last_error or '' }}</td>
+      </tr>
+    {% else %}
+      <tr><td colspan="7" class="py-10 text-center text-slate-400">No stations match.</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {{ pager(page, pages, "/stations?" ~ qs ~ "&health=" ~ health) }}
+</form>
+{% endblock %}
+{% block scripts %}
+<script>
+const boxes = () => [...document.querySelectorAll(".sel")];
+const update = () => document.getElementById("sel-count").textContent = boxes().filter(b => b.checked).length;
+document.getElementById("sel-all").addEventListener("change", e => { boxes().forEach(b => b.checked = e.target.checked); update(); });
+boxes().forEach(b => b.addEventListener("change", update));
+</script>
+{% endblock %}

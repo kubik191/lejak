@@ -1,0 +1,77 @@
+﻿model,source_dir,layer,action,tok,profil,rkm,Druh_bodu,note
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Slaná,pod Turcom,16.3,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Turiec,ústie,0.0,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Slaná,pod Činčou,18.15,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Činča,ústie,0.0,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Slaná,Tornaľa,21.1,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Lapša,ústie,0.0,prietok,same coordinates already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Slaná,pod Muráňom,25.4,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Muráň,ústie,0.0,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Slaná,"Bretka, vodočet",26.2,prietok,H_Q10=242.8; H_Q100=350.1; H_Q1000=vybrežuje; already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Sograď,ústie,0.0,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Slaná,pod prítokom Sograď,26.6,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Slaná,pod Ardovským p.,32.3,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Ardovský potok,ústie,0.0,prietok,same coordinates already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Slaná,Plešivec,36.9,prietok,same coordinates already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Slaná,Slavec,44.4,prietok,same coordinates already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Slaná,pod Egrešským p.,47.7,prietok,same coordinates already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Egrešský potok,ústie,0.0,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Slaná,pod Čremošnou,48.6,prietok,same coordinates already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Čremošná,ústie,0.0,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Slaná,pod Honským p.,49.1,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Honský potok,ústie,0.0,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Honský potok,"Brzotín, 100 m nad zaústením ľavostr. prítoku",1.3,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Slaná,"Rožňava, vodočet",51.9,prietok,H_Q10=212; H_Q100=276.9; H_Q1000=vybrežuje; already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Slaná,pod Betliarskym p.,57.9,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Betliarsky p.,ústie,0.0,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Slaná,"Betliar, nad Čapášskym p.",58.9,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Slaná,"pod Súľovským  p., Gem. Poloma",60.65,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Súľovský potok,ústie,0.0,prietok,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Qn,skip_existing,Súľovský potok,"Gemerská Poloma, pod Martinkovým p.",2.0,prietok,same coordinates already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Gauge_Refrence_Level,skip_existing,Slaná,"Bretka, vodočet",26.2,QH,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Gauge_Refrence_Level,skip_existing,Slaná,"Rožňava, vodočet",51.9,QH,already in destination
+SL_10,D:\Documents\StartupProject\SL_10-Hydrological_data\Hydrological_data,Rating_Curves,skip_layer,,,,,same stations as Gauge; Excel curves used for H_Q*
+VH_39,D:\Documents\StartupProject\VH_39-Hydrological_data\Hydrological_data,Qn,skip_existing,Biela Orava,pod Veseliankou - ústie do VN Orava,1.28,prietok,already in destination
+VH_39,D:\Documents\StartupProject\VH_39-Hydrological_data\Hydrological_data,Qn,skip_existing,Biela Orava,nad Veseliankou,1.3,prietok,already in destination
+VH_39,D:\Documents\StartupProject\VH_39-Hydrological_data\Hydrological_data,Qn,skip_existing,Veselianka,"Oravská Jasenica, vodočet",0.95,prietok,H_Q10=163.1; H_Q100=300; H_Q1000=vybrežuje; already in destination
+VH_39,D:\Documents\StartupProject\VH_39-Hydrological_data\Hydrological_data,Qn,skip_existing,Veselianka,pod Riečkou,4.74,prietok,already in destination
+VH_39,D:\Documents\StartupProject\VH_39-Hydrological_data\Hydrological_data,Qn,skip_existing,Riečka,ústie,0.0,prietok,already in destination
+VH_39,D:\Documents\StartupProject\VH_39-Hydrological_data\Hydrological_data,Qn,skip_existing,Veselianka,pod Mutnikom ľavostranným,10.9,prietok,already in destination
+VH_39,D:\Documents\StartupProject\VH_39-Hydrological_data\Hydrological_data,Qn,skip_existing,Mútnik,ústie,0.0,prietok,already in destination
+VH_39,D:\Documents\StartupProject\VH_39-Hydrological_data\Hydrological_data,Qn,skip_existing,Veselianka,pod Mútnikom pravostranným,11.2,prietok,already in destination
+VH_39,D:\Documents\StartupProject\VH_39-Hydrological_data\Hydrological_data,Qn,skip_existing,Mútnik,ústie,0.0,prietok,already in destination
+VH_39,D:\Documents\StartupProject\VH_39-Hydrological_data\Hydrological_data,Qn,skip_existing,Veselianka,Oravské Veselé,16.05,prietok,already in destination
+VH_39,D:\Documents\StartupProject\VH_39-Hydrological_data\Hydrological_data,Gauge_Refrence_Level,skip_existing,Veselianka,"Oravská Jasenica, vodočet",0.95,QH,already in destination
+VH_39,D:\Documents\StartupProject\VH_39-Hydrological_data\Hydrological_data,Rating_Curves,skip_layer,,,,,same stations as Gauge; Excel curves used for H_Q*
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Polhoranka,"Zubrohlava, vodočet",1.6,prietok,H_Q10=343.8; H_Q100=570; H_Q1000=vybrežuje; already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Polhoranka,pod Bystrou,6.87,prietok,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Bystrá,ústie,0.0,prietok,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Polhoranka,pod Sihelnianskym potokom,9.36,prietok,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Sihelniansky potok,ústie,0.0,prietok,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Bystrá,pod Rabčickým potokom,2.65,prietok,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Rabčický potok,"Rabča, ústie do Polhoranky",0.0,prietok,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Bystrá,pod Záhorankou,4.0,prietok,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Záhoranka,ústie,0.0,prietok,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Bystrá,pod Vonžovcom,5.98,prietok,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Bystrá,Slaná voda,6.67,prietok,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Polhoranka,"Oravská Polhora, vodočet",14.8,prietok,H_Q10=205; H_Q100=vybrežuje; H_Q1000=vybrežuje; already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Polhoranka,po Dlhou vodou,15.64,prietok,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Dlhá voda,ústie,0.0,prietok,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Polhoranka,pod Kohútovým potokom,16.71,prietok,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Kohútov potok,ústie,0.0,prietok,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Qn,skip_existing,Polhoranka,Oravská Polhora,18.0,prietok,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Gauge_Refrence_Level,skip_existing,Polhoranka,"Zubrohlava, vodočet",1.6,QH,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Gauge_Refrence_Level,skip_existing,Polhoranka,"Oravská Polhora, vodočet",14.8,QH,already in destination
+VH_40,D:\Documents\StartupProject\VH_40-Hydrological_data\Hydrological_data,Rating_Curves,skip_layer,,,,,same stations as Gauge; Excel curves used for H_Q*
+VH_64,D:\Documents\StartupProject\VH_64-Hydrological_data\Hydrological_data,Qn,skip_existing,Varínka,ústie do Váhu,0.0,prietok,already in destination
+VH_64,D:\Documents\StartupProject\VH_64-Hydrological_data\Hydrological_data,Qn,skip_existing,Varínka,"Stráža, vodočet",5.1,prietok,H_Q10=185; H_Q100=320.2; H_Q1000=vybrežuje; already in destination
+VH_64,D:\Documents\StartupProject\VH_64-Hydrological_data\Hydrological_data,Qn,skip_existing,Kúr,ústie,0.0,prietok,already in destination
+VH_64,D:\Documents\StartupProject\VH_64-Hydrological_data\Hydrological_data,Qn,skip_existing,Varínka,pod Kúrom,4.28,prietok,already in destination
+VH_64,D:\Documents\StartupProject\VH_64-Hydrological_data\Hydrological_data,Qn,skip_existing,Bačínsky jarok,ústie,0.0,prietok,already in destination
+VH_64,D:\Documents\StartupProject\VH_64-Hydrological_data\Hydrological_data,Qn,skip_existing,Varínka,pod Bačínskym potokom,6.32,prietok,already in destination
+VH_64,D:\Documents\StartupProject\VH_64-Hydrological_data\Hydrological_data,Qn,skip_existing,Beliansky potok,ústie,0.0,prietok,already in destination
+VH_64,D:\Documents\StartupProject\VH_64-Hydrological_data\Hydrological_data,Qn,skip_existing,Varínka,pod Belianskym potokom,8.45,prietok,already in destination
+VH_64,D:\Documents\StartupProject\VH_64-Hydrological_data\Hydrological_data,Qn,skip_existing,Varínka,odbočka na Zlieň,10.52,prietok,already in destination
+VH_64,D:\Documents\StartupProject\VH_64-Hydrological_data\Hydrological_data,Gauge_Refrence_Level,skip_existing,Varínka,"Stráža, vodočet",5.1,QH,already in destination
+VH_64,D:\Documents\StartupProject\VH_64-Hydrological_data\Hydrological_data,Rating_Curves,skip_layer,,,,,same stations as Gauge; Excel curves used for H_Q*
+VH_64,D:\Documents\StartupProject\VH_64-Hydrological_data\Hydrological_data,Waves,skip_existing,Varínka,"Stráža, vodočet",5.1,vlna Q10 Q100 Q1000,"Qmax_10=100; Qmax_100=230; Qmax_1000=360; H_Q10=185; H_Q100=320.2; H_Q1000=vybrežuje; wave point already in destination 69 m away ('VS Stráža', vlna q10 q100 q1000)"

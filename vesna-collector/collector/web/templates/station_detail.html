@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% from "macros.html" import health_dot %}
+{% block title %}{{ st.name }} · VESNA Collector{% endblock %}
+{% block content %}
+<div class="mb-2 text-sm"><a href="/stations?source={{ st.source_key }}" class="text-sky-700 hover:underline">← {{ source.name }} stations</a></div>
+<div class="mb-6 flex flex-wrap items-start justify-between gap-4">
+  <div>
+    <h1 class="text-2xl font-semibold tracking-tight">{{ st.display_name }}</h1>
+    <p class="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-slate-500">
+      <span>{{ source.name }}</span><span>ID {{ st.external_id }}</span>
+      {% if st.basin %}<span>Basin: {{ st.basin }}</span>{% endif %}
+      {% for k, v in (st.meta or {}).items() if v is not none and k not in ('kind',) %}<span>{{ k | replace('_', ' ') }}: {{ v }}</span>{% endfor %}
+      {{ health_dot(health) }}
+    </p>
+  </div>
+  <div class="flex gap-2">
+    {% if st.url %}<a href="{{ st.url }}" target="_blank" rel="noopener" class="btn btn-secondary">Open on SHMÚ ↗</a>{% endif %}
+    <a href="/export/download?station_id={{ st.id }}&start=2000-01-01&fmt=xlsx" title="All data for this station" class="btn btn-secondary">Export Excel</a>
+    <form hx-post="/stations/{{ st.id }}/toggle">
+      <button class="btn {{ 'btn-danger' if st.enabled else 'btn-primary' }}">{{ 'Disable collection' if st.enabled else 'Enable collection' }}</button>
+    </form>
+  </div>
+</div>
+
+<div class="mb-6 grid grid-cols-2 gap-4 md:grid-cols-4">
+  {% for label, value in [
+    ("Measurements stored", count | num),
+    ("Newest data point", st.last_observed_at | dt),
+    ("Last successful run", st.last_success_at | ago),
+    ("Failures in a row", st.consecutive_failures),
+  ] %}
+  <div class="card p-4"><div class="text-xs font-medium uppercase tracking-wide text-slate-500">{{ label }}</div><div class="mt-1 text-xl font-semibold tabular-nums">{{ value }}</div></div>
+  {% endfor %}
+</div>
+
+{% if st.last_error %}
+<div class="mb-6 rounded-lg border border-rose-200 bg-rose-50 p-3 text-sm text-rose-800"><b>Last error:</b> {{ st.last_error }}</div>
+{% endif %}
+
+<div class="card mb-6 p-5">
+  <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+    <div class="flex flex-wrap gap-1 text-sm">
+      {% for v in variables if v.unit %}
+        <a href="?variable={{ v.key }}&days={{ days }}" class="rounded-md px-3 py-1 {{ 'bg-slate-800 text-white' if v.key == var.key else 'ring-1 ring-slate-200 hover:bg-slate-50' }}">{{ v.label }}</a>
+      {% endfor %}
+    </div>
+    <div class="flex gap-1 text-sm">
+      {% for d, label in [(1, "24 h"), (7, "7 days"), (30, "30 days"), (365, "1 year")] %}
+        <a href="?variable={{ var.key }}&days={{ d }}" class="rounded-md px-3 py-1 {{ 'bg-sky-600 text-white' if d == days else 'ring-1 ring-slate-200 hover:bg-slate-50' }}">{{ label }}</a>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="h-80"><canvas id="series"></canvas></div>
+  <p id="series-empty" class="hidden py-16 text-center text-sm text-slate-400">No data in this period yet.</p>
+</div>
+
+<div class="grid gap-6 lg:grid-cols-2">
+  <div class="card">
+    <h2 class="px-5 pt-5 text-sm font-semibold uppercase tracking-wide text-slate-500">Latest measurements</h2>
+    <table class="tbl mt-2">
+      <thead><tr><th>Observed</th><th>Variable</th><th class="text-right">Value</th></tr></thead>
+      <tbody>
+      {% for m in latest %}{% set v = source.variable(m.variable) %}
+        <tr><td class="text-slate-500 tabular-nums">{{ m.observed_at | dt }}</td><td>{{ v.label if v else m.variable }}</td>
+          <td class="text-right tabular-nums">{{ m.value_text if m.value_text else ('—' if m.value is none else m.value) }} <span class="text-slate-400">{{ v.unit if v and not m.value_text }}</span></td></tr>
+      {% else %}<tr><td colspan="3" class="py-8 text-center text-slate-400">Nothing collected yet.</td></tr>{% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h2 class="px-5 pt-5 text-sm font-semibold uppercase tracking-wide text-slate-500">Recent problems</h2>
+    <table class="tbl mt-2">
+      <tbody>
+      {% for e in errors %}
+        <tr><td class="w-40 text-slate-500 tabular-nums">{{ e.created_at | dt }}</td><td><a class="text-sky-700 hover:underline" href="/runs/{{ e.run_id }}">#{{ e.run_id }}</a></td><td class="text-rose-700">{{ e.message }}</td></tr>
+      {% else %}<tr><td class="py-8 text-center text-slate-400">No problems recorded for this station.</td></tr>{% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+const cfg = {{ {"id": st.id, "variable": var.key, "days": days, "label": var.label, "unit": var.unit, "bar": var.key.startswith("precip")} | tojson }};
+fetch(`/api/stations/${cfg.id}/series?variable=${cfg.variable}&days=${cfg.days}`).then(r => r.json()).then(d => {
+  if (!d.points.length) { document.getElementById("series").parentElement.classList.add("hidden"); document.getElementById("series-empty").classList.remove("hidden"); return; }
+  new Chart(document.getElementById("series"), {
+    type: cfg.bar ? "bar" : "line",
+    data: {datasets: [{label: `${cfg.label} [${cfg.unit}]`, data: d.points, borderColor: "#0284c7", backgroundColor: cfg.bar ? "#0284c7" : "rgba(2,132,199,.12)",
+      fill: cfg.bar ? false : "origin", pointRadius: d.points.length > 60 ? 0 : 3, tension: .25, borderWidth: 2}]},
+    options: {
+      maintainAspectRatio: false, interaction: {mode: "index", intersect: false},
+      plugins: {legend: {display: false}, tooltip: {callbacks: {label: c => `${c.parsed.y} ${cfg.unit}`}}},
+      scales: {x: {type: "time", time: {tooltipFormat: "dd.MM.yyyy HH:mm", displayFormats: {hour: "HH:mm", day: "dd.MM"}}, grid: {display: false}},
+               y: {title: {display: true, text: cfg.unit}, beginAtZero: cfg.bar}}
+    }
+  });
+});
+</script>
+{% endblock %}

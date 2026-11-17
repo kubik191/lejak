@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% from "macros.html" import status_badge %}
+{% block content %}
+<div class="mb-6 flex flex-wrap items-end justify-between gap-4">
+  <div>
+    <h1 class="text-2xl font-semibold tracking-tight">Overview</h1>
+    <p class="text-sm text-slate-500">Automated collection of SHMÚ hydrological data — status at a glance.</p>
+  </div>
+  <form hx-post="/runs" hx-vals='{"source": "all"}'>
+    <button class="btn btn-primary"><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.34-5.89a1.5 1.5 0 0 0 0-2.54L6.3 2.84Z"/></svg>Run all sources now</button>
+  </form>
+</div>
+
+{% include "partials/active_runs.html" %}
+
+<section class="mb-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
+  {% set cards = [
+    ("Measurements stored", kpis.measurements | num, "across all sources"),
+    ("Active stations", kpis.stations | num, (kpis.failing ~ " failing · " ~ kpis.stale ~ " without new data")),
+    ("Collection success (7 days)", ((kpis.station_rate ~ " %") if kpis.station_rate is not none else "—"), (kpis.runs_7d ~ " runs · " ~ kpis.runs_ok_7d ~ " without any station failure")),
+    ("New data (last 7 days)", kpis.rows_7d | num, (kpis.requests_7d | num) ~ " web requests, zero manual steps"),
+  ] %}
+  {% for label, value, sub in cards %}
+  <div class="card p-5">
+    <div class="text-xs font-medium uppercase tracking-wide text-slate-500">{{ label }}</div>
+    <div class="mt-2 text-3xl font-semibold tabular-nums">{{ value }}</div>
+    <div class="mt-1 text-xs text-slate-500">{{ sub }}</div>
+  </div>
+  {% endfor %}
+</section>
+
+<section class="mb-8 grid gap-4 lg:grid-cols-2">
+  {% for key, source in SOURCES.items() %}
+  {% set setting = settings[key] %}{% set last = last_runs[key] %}{% set h = health[key] %}
+  {% set total = (h.values() | sum) or 1 %}
+  <div class="card flex flex-col p-5">
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <h3 class="font-semibold">{{ source.name }}</h3>
+        <p class="mt-0.5 text-xs text-slate-500">{{ source.description }}</p>
+      </div>
+      <form hx-post="/runs" hx-vals='{"source": "{{ key }}"}'><button class="btn btn-secondary btn-sm whitespace-nowrap">Run now</button></form>
+    </div>
+
+    <dl class="mt-4 grid grid-cols-3 gap-3 text-sm">
+      <div>
+        <dt class="text-xs text-slate-500">Schedule</dt>
+        <dd>{% if setting.enabled %}{{ setting.schedule | cron }}{% else %}<span class="text-slate-400">paused</span>{% endif %}</dd>
+        {% if setting.enabled and setting.next_run_at %}<dd class="text-xs text-slate-500">next {{ setting.next_run_at | ago }}</dd>{% endif %}
+      </div>
+      <div>
+        <dt class="text-xs text-slate-500">Last run</dt>
+        {% if last %}
+          <dd><a href="/runs/{{ last.id }}">{{ status_badge(last.status) }}</a></dd>
+          <dd class="text-xs text-slate-500">{{ last.finished_at | ago }} · {{ last.duration_seconds | duration }}</dd>
+        {% else %}<dd class="text-slate-400">never</dd>{% endif %}
+      </div>
+      <div>
+        <dt class="text-xs text-slate-500">Newest data</dt>
+        <dd>{{ latest_obs.get(key) | dt }}</dd>
+        {% if last %}<dd class="text-xs text-slate-500">+{{ last.rows_new | num }} rows last run</dd>{% endif %}
+      </div>
+    </dl>
+
+    <div class="mt-4">
+      <div class="flex h-2 overflow-hidden rounded-full bg-slate-100">
+        {% for hk in ["ok", "stale", "warning", "failing", "new", "disabled"] %}
+          {% if h[hk] %}<div class="{{ HEALTH_STYLES[hk][0] }}" style="width: {{ 100 * h[hk] / total }}%" title="{{ HEALTH_STYLES[hk][1] }}: {{ h[hk] }}"></div>{% endif %}
+        {% endfor %}
+      </div>
+      <div class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-600">
+        {% for hk in ["ok", "stale", "warning", "failing", "new", "disabled"] %}
+          {% if h[hk] %}<a href="/stations?source={{ key }}&health={{ hk }}" class="inline-flex items-center gap-1 hover:text-sky-700"><span class="dot {{ HEALTH_STYLES[hk][0] }}"></span>{{ h[hk] }} {{ HEALTH_STYLES[hk][1] | lower }}</a>{% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+<section class="mb-8 grid gap-4 lg:grid-cols-5">
+  <div class="card p-5 lg:col-span-3">
+    <h2 class="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-500">New measurements per day</h2>
+    <div class="h-64"><canvas id="activity"></canvas></div>
+  </div>
+  <div class="card lg:col-span-2">
+    <div class="flex items-center justify-between px-5 pt-5">
+      <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">Recent runs</h2>
+      <a href="/runs" class="text-xs text-sky-700 hover:underline">All runs →</a>
+    </div>
+    <table class="tbl mt-2">
+      <tbody>
+      {% for run in recent_runs %}
+        <tr class="cursor-pointer" onclick="location.href='/runs/{{ run.id }}'">
+          <td><div class="font-medium">{{ SOURCES[run.source_key].name }}</div><div class="text-xs text-slate-500">#{{ run.id }} · {{ run.trigger }} · {{ (run.finished_at or run.started_at or run.queued_at) | ago }}</div></td>
+          <td>{{ status_badge(run.status) }}</td>
+          <td class="text-right text-xs text-slate-500 tabular-nums">{{ run.stations_ok }}/{{ run.stations_total }}<br>{{ run.duration_seconds | duration }}</td>
+        </tr>
+      {% else %}
+        <tr><td class="py-8 text-center text-slate-400">No runs yet — click “Run all sources now”.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const palette = ["#0284c7", "#10b981", "#f59e0b", "#8b5cf6"];
+fetch("/api/activity").then(r => r.json()).then(d => {
+  new Chart(document.getElementById("activity"), {
+    type: "bar",
+    data: {
+      labels: d.labels.map(l => new Date(l).toLocaleDateString("en-GB", {day: "2-digit", month: "short"})),
+      datasets: d.datasets.map((ds, i) => ({label: ds.label, data: ds.data, backgroundColor: palette[i % 4], borderRadius: 3}))
+    },
+    options: {
+      maintainAspectRatio: false,
+      plugins: {legend: {position: "bottom", labels: {boxWidth: 12}}},
+      scales: {x: {stacked: true, grid: {display: false}}, y: {stacked: true, beginAtZero: true}}
+    }
+  });
+});
+</script>
+{% endblock %}

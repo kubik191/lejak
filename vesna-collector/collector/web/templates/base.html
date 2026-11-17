@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" class="h-full bg-slate-50">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}VESNA Collector{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body class="h-full text-slate-800 antialiased">
+{% set path = request.url.path %}
+<header class="bg-slate-900 text-slate-100">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 flex h-14 items-center gap-8">
+    <a href="/" class="flex items-center gap-2 font-semibold tracking-tight">
+      <span class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-sky-500 text-white text-sm">V</span>
+      VESNA Collector
+    </a>
+    <nav class="flex gap-1 text-sm">
+      {% for href, label in [("/", "Dashboard"), ("/runs", "Runs"), ("/stations", "Stations"), ("/schedules", "Schedules & alerts"), ("/export", "Export")] %}
+        {% set active = (path == href) or (href != "/" and path.startswith(href)) %}
+        <a href="{{ href }}" class="rounded-md px-3 py-1.5 {{ 'bg-slate-700 text-white' if active else 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">{{ label }}</a>
+      {% endfor %}
+    </nav>
+    <div class="ml-auto" hx-get="/partials/live?compact=1" hx-trigger="load, every 5s" hx-select="#worker-pill" hx-swap="innerHTML"></div>
+  </div>
+</header>
+
+<main class="mx-auto max-w-7xl px-4 sm:px-6 py-8">
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="mx-auto max-w-7xl px-4 sm:px-6 pb-8 text-xs text-slate-400">
+  VESNA Collector v{{ version }} · data source: Slovak Hydrometeorological Institute (SHMÚ) · times in local time
+</footer>
+{% block scripts %}{% endblock %}
+</body>
+</html>

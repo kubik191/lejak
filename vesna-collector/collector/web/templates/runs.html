@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% from "macros.html" import status_badge, pager, progress %}
+{% block title %}Runs · VESNA Collector{% endblock %}
+{% block content %}
+<div class="mb-6 flex flex-wrap items-end justify-between gap-4">
+  <div>
+    <h1 class="text-2xl font-semibold tracking-tight">Run history</h1>
+    <p class="text-sm text-slate-500">Every collection run is recorded — an audit trail of what was collected, when and how reliably.</p>
+  </div>
+  <form method="get" class="flex gap-2">
+    <select name="source" class="input" onchange="this.form.submit()">
+      <option value="">All sources</option>
+      {% for key, s in SOURCES.items() %}<option value="{{ key }}" {{ 'selected' if key == source }}>{{ s.name }}</option>{% endfor %}
+    </select>
+    <select name="status" class="input" onchange="this.form.submit()">
+      <option value="">Any status</option>
+      {% for st in statuses %}<option value="{{ st }}" {{ 'selected' if st == status }}>{{ st }}</option>{% endfor %}
+    </select>
+  </form>
+</div>
+
+{% set any_active = runs | selectattr("status", "in", ["queued", "running"]) | list %}
+<div class="card overflow-hidden" id="runs-table"
+     {% if any_active %}hx-get="{{ request.url }}" hx-trigger="every 3s" hx-select="#runs-table" hx-swap="outerHTML"{% endif %}>
+  <table class="tbl">
+    <thead><tr>
+      <th>Run</th><th>Source</th><th>Trigger</th><th>Status</th><th>Started</th><th class="text-right">Duration</th>
+      <th class="text-right">Stations OK</th><th class="text-right">Failed</th><th class="text-right">New rows</th><th class="text-right">Requests</th>
+    </tr></thead>
+    <tbody>
+    {% for run in runs %}
+      <tr class="cursor-pointer" onclick="location.href='/runs/{{ run.id }}'">
+        <td class="font-medium text-sky-700">#{{ run.id }}</td>
+        <td>{{ SOURCES[run.source_key].name }}</td>
+        <td class="text-slate-500">{{ run.trigger }}</td>
+        <td>{{ status_badge(run.status) }}{% if run.status == 'running' %}<div class="mt-1 w-24">{{ progress(run) }}</div>{% endif %}</td>
+        <td class="text-slate-500">{{ (run.started_at or run.queued_at) | dt }}</td>
+        <td class="text-right tabular-nums">{{ run.duration_seconds | duration }}</td>
+        <td class="text-right tabular-nums">{{ run.stations_ok }}/{{ run.stations_total }}</td>
+        <td class="text-right tabular-nums {{ 'text-rose-600 font-medium' if run.stations_failed }}">{{ run.stations_failed }}</td>
+        <td class="text-right tabular-nums">{{ run.rows_new | num }}</td>
+        <td class="text-right tabular-nums text-slate-500">{{ run.requests_made | num }}</td>
+      </tr>
+    {% else %}
+      <tr><td colspan="10" class="py-10 text-center text-slate-400">No runs match.</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {{ pager(page, pages, "/runs?source=" ~ source ~ "&status=" ~ status) }}
+</div>
+{% endblock %}

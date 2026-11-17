@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Export · VESNA Collector{% endblock %}
+{% block content %}
+<div class="mb-6">
+  <h1 class="text-2xl font-semibold tracking-tight">Export data</h1>
+  <p class="text-sm text-slate-500">Download collected measurements for analysis in Excel, Python or GIS tools. One row per station, time and variable.</p>
+</div>
+<form method="get" action="/export/download" class="card grid max-w-3xl gap-5 p-6 md:grid-cols-2">
+  <label class="text-sm">
+    <span class="mb-1 block text-slate-600">Source</span>
+    <select name="source" class="input w-full">
+      <option value="">All sources</option>
+      {% for key, s in SOURCES.items() %}<option value="{{ key }}">{{ s.name }}</option>{% endfor %}
+    </select>
+  </label>
+  <div class="text-sm">
+    <span class="mb-1 block text-slate-600">Format</span>
+    <div class="flex gap-4 pt-1.5">
+      <label class="inline-flex items-center gap-2"><input type="radio" name="fmt" value="csv" checked> CSV</label>
+      <label class="inline-flex items-center gap-2"><input type="radio" name="fmt" value="xlsx"> Excel (.xlsx)</label>
+    </div>
+  </div>
+  <label class="text-sm"><span class="mb-1 block text-slate-600">From (observation date)</span><input type="date" name="start" value="{{ start }}" class="input w-full"></label>
+  <label class="text-sm"><span class="mb-1 block text-slate-600">To</span><input type="date" name="end" value="{{ end }}" class="input w-full"></label>
+  <div class="md:col-span-2 flex items-center justify-between">
+    <p class="text-xs text-slate-500">Tip: a single station can be exported from its detail page.</p>
+    <button class="btn btn-primary">Download</button>
+  </div>
+</form>
+{% endblock %}

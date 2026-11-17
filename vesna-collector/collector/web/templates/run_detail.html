@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Run #{{ run.id }} · VESNA Collector{% endblock %}
+{% block content %}
+<div class="mb-2 text-sm"><a href="/runs" class="text-sky-700 hover:underline">← Run history</a></div>
+{% include "partials/run_progress.html" %}
+
+<div class="card mt-6">
+  <div class="flex items-center justify-between px-5 pt-5">
+    <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">Log</h2>
+    <div class="flex gap-1 text-xs">
+      {% for lv, label in [("", "All"), ("error", "Errors"), ("warning", "Warnings"), ("info", "Info")] %}
+        <a href="/runs/{{ run.id }}?level={{ lv }}" class="rounded-md px-2 py-1 {{ 'bg-slate-800 text-white' if lv == level else 'text-slate-600 hover:bg-slate-100' }}">{{ label }}</a>
+      {% endfor %}
+    </div>
+  </div>
+  <table class="tbl mt-2">
+    <thead><tr><th class="w-40">Time</th><th class="w-24">Level</th><th class="w-72">Station</th><th>Message</th></tr></thead>
+    <tbody>
+    {% for e in events %}
+      <tr>
+        <td class="text-slate-500 tabular-nums">{{ e.created_at | dt(true) }}</td>
+        <td><span class="badge ring-1 {{ {'error': 'bg-rose-50 text-rose-700 ring-rose-200', 'warning': 'bg-amber-50 text-amber-800 ring-amber-200'}.get(e.level, 'bg-slate-50 text-slate-600 ring-slate-200') }}">{{ e.level }}</span></td>
+        <td>{% if e.station %}<a class="text-sky-700 hover:underline" href="/stations/{{ e.station.id }}">{{ e.station.display_name }}</a>{% else %}<span class="text-slate-400">—</span>{% endif %}</td>
+        <td class="text-slate-700">{{ e.message }}</td>
+      </tr>
+    {% else %}
+      <tr><td colspan="4" class="py-8 text-center text-slate-400">{{ 'Nothing logged — every station was collected without problems.' if run.status in ('success',) else 'No log entries.' }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

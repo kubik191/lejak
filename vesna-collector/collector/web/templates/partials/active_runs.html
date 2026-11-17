@@ -1,0 +1,40 @@
+{% from "macros.html" import status_badge, progress %}
+<div id="active-runs" hx-get="/partials/live" hx-trigger="every 3s" hx-select="#active-runs" hx-swap="outerHTML">
+  {% if not worker.online %}
+  <div class="mb-6 rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-800">
+    <p class="font-semibold">The worker is not running — scheduled and manual runs will wait in the queue.</p>
+    <p class="mt-1">Last heartbeat: {{ worker.last_seen | ago }}. Start it with <code class="rounded bg-rose-100 px-1">docker compose up -d worker</code> or <code class="rounded bg-rose-100 px-1">python -m collector worker</code>.</p>
+  </div>
+  {% endif %}
+  {% if active_runs %}
+  <div class="card mb-6 p-5">
+    <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500">In progress</h2>
+    <div class="space-y-4">
+      {% for run in active_runs %}
+      <div class="grid grid-cols-12 items-center gap-4">
+        <div class="col-span-3">
+          <a href="/runs/{{ run.id }}" class="font-medium hover:text-sky-700">{{ SOURCES[run.source_key].name }}</a>
+          <div class="text-xs text-slate-500">#{{ run.id }} · {{ run.trigger }}</div>
+        </div>
+        <div class="col-span-2">{{ status_badge(run.status) }}</div>
+        <div class="col-span-5">
+          {% if run.status == 'running' %}
+            {{ progress(run) }}
+            <div class="mt-1 text-xs text-slate-500">
+              {{ run.stations_done }}/{{ run.stations_total }} stations · {{ run.stations_failed }} failed · {{ run.rows_new | num }} new rows · {{ run.duration_seconds | duration }}
+            </div>
+          {% else %}
+            <div class="text-xs text-slate-500">Queued {{ run.queued_at | ago }} — waiting for the worker</div>
+          {% endif %}
+        </div>
+        <div class="col-span-2 text-right">
+          {% if not run.cancel_requested %}
+          <form hx-post="/runs/{{ run.id }}/cancel" class="inline"><button class="btn btn-danger btn-sm">Cancel</button></form>
+          {% else %}<span class="text-xs text-slate-500">cancelling…</span>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>

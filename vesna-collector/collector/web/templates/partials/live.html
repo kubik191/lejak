@@ -1,0 +1,12 @@
+<span id="worker-pill">
+  {% if worker.online %}
+    <span class="badge bg-emerald-500/15 text-emerald-300" title="Last heartbeat {{ worker.last_seen | dt(true) }}">
+      <span class="dot bg-emerald-400"></span>Worker online{% if worker.info.current_run_id %} · running #{{ worker.info.current_run_id }}{% endif %}
+    </span>
+  {% else %}
+    <span class="badge bg-rose-500/20 text-rose-200" title="No heartbeat since {{ worker.last_seen | dt(true) }}">
+      <span class="dot bg-rose-400"></span>Worker offline
+    </span>
+  {% endif %}
+</span>
+{% include "partials/active_runs.html" %}

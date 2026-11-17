@@ -1,0 +1,29 @@
+{% macro status_badge(status) -%}
+<span class="badge ring-1 {{ STATUS_STYLES.get(status, '') }}">
+  {%- if status == 'running' %}<svg class="h-3 w-3 animate-spin" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="3" opacity=".25"/><path d="M21 12a9 9 0 0 0-9-9" stroke="currentColor" stroke-width="3"/></svg>{% endif -%}
+  {{ status }}
+</span>
+{%- endmacro %}
+
+{% macro health_dot(health) -%}
+{% set cls, label = HEALTH_STYLES[health] %}
+<span class="inline-flex items-center gap-1.5 text-xs text-slate-600" title="{{ label }}"><span class="dot {{ cls }}"></span>{{ label }}</span>
+{%- endmacro %}
+
+{% macro progress(run) -%}
+<div class="h-2 w-full overflow-hidden rounded-full bg-slate-100">
+  <div class="h-2 rounded-full bg-sky-500 transition-all duration-700" style="width: {{ run.progress_pct }}%"></div>
+</div>
+{%- endmacro %}
+
+{% macro pager(page, pages, base) -%}
+{% if pages > 1 %}
+<div class="flex items-center justify-between px-4 py-3 text-sm text-slate-600">
+  <span>Page {{ page }} of {{ pages }}</span>
+  <div class="flex gap-2">
+    {% if page > 1 %}<a class="btn btn-secondary btn-sm" href="{{ base }}&page={{ page - 1 }}">← Previous</a>{% endif %}
+    {% if page < pages %}<a class="btn btn-secondary btn-sm" href="{{ base }}&page={{ page + 1 }}">Next →</a>{% endif %}
+  </div>
+</div>
+{% endif %}
+{%- endmacro %}
