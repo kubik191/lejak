@@ -1,6 +1,6 @@
+import Link from "next/link";
 import SiteHeader from "./components/SiteHeader";
 import ContactForm from "./components/ContactForm";
-import ProjectShowcase from "./components/ProjectShowcase";
 
 export default function Home() {
   return (
@@ -104,20 +104,46 @@ export default function Home() {
         <div className="wrap">
           <div className="section-head section-head-wide">
             <div>
-              <p className="eyebrow">Built prototypes &amp; interactive demos</p>
+              <p className="eyebrow">Prototype work examples</p>
               <h2>Real problems. Practical solutions.</h2>
-              <p>Try interactive walkthroughs of our three working prototypes below, or inspect the full source code on GitHub.</p>
+              <p>Three examples of the workflows we automate, built to keep people in control.</p>
             </div>
-            <a
-              className="button button-ghost"
-              href="https://github.com/kubik191/lejak"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Browse GitHub repo ↗
-            </a>
+            <Link className="button button-primary" href="/projects">
+              Try interactive demos →
+            </Link>
           </div>
-          <ProjectShowcase />
+          <div className="examples">
+            <article className="example">
+              <div className="example-top">
+                <h3>Booking and inbox, without the back-and-forth</h3>
+                <span className="tag">Booking &amp; automation</span>
+              </div>
+              <p>If customers still book by email or paper, we can put a real booking system behind that. An assistant reads the message, checks the calendar, holds the time, and sends a payment link. Recurring bookings are imported once. Staff can still edit everything by hand. You keep the email address and the calendar. We handle the repetitive replies.</p>
+              <p className="stay">Unusual requests, like discounts or special deals, go to a person, not automatic booking.</p>
+            </article>
+            <article className="example">
+              <div className="example-top">
+                <h3>Data collection that watches itself</h3>
+                <span className="tag">Automation &amp; monitoring</span>
+              </div>
+              <p>If someone on your team still fetches data by hand, or a job runs overnight and fails without anyone noticing, we can replace that with a scheduled collector. It runs in the background, stores a clean history, and shows its own health on a dashboard.</p>
+              <p className="stay">It emails you only when something actually breaks. People get involved when attention is needed.</p>
+            </article>
+            <article className="example">
+              <div className="example-top">
+                <h3>Software that does the tedious copying</h3>
+                <span className="tag">Workflow tool</span>
+              </div>
+              <p>If specialists spend hours copying points, fields, or files from one place to another, we can build a tool that does the mapping, shows a preview, and imports the selected records with a backup.</p>
+              <p className="stay">The specialist still reviews and confirms. The tool takes over the copying.</p>
+            </article>
+          </div>
+          <div className="examples-cta">
+            <p className="caption">Want to test how these work? Try the interactive walkthroughs on our projects page.</p>
+            <Link className="button button-ghost" href="/projects">
+              Open interactive projects page →
+            </Link>
+          </div>
 
           <div className="offer" style={{ marginTop: "1.5rem" }}>
             <div className="offer-grid">
@@ -191,9 +217,7 @@ export default function Home() {
         <div className="wrap">
           <span>© 2026 LEJAK. All rights reserved.</span>
           <div className="footer-links">
-            <a href="https://github.com/kubik191/lejak" target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
+            <Link href="/projects">Projects</Link>
             <a href="#top">Back to top</a>
           </div>
         </div>
