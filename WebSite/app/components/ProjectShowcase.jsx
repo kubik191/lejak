@@ -498,7 +498,7 @@ export default function ProjectShowcase() {
             {vesnaView === "screenshot" ? (
               <div className="screenshot-frame">
                 <img
-                  src="/vesna-dashboard.png"
+                  src="https://raw.githubusercontent.com/kubik191/lejak/main/WebSite/public/vesna-dashboard.png"
                   alt="VESNA Collector FastAPI dashboard showing monitored SHMÚ hydrological stations, run history, and worker heartbeat"
                 />
                 <p className="caption">
